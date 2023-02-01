@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    
+
+</head>
+<body>
+    <section id="sidebar">
+        <a href="#" class="brand d-none d-md-flex" >
+            <img src="../images/logo_dark.png"  class="logo" alt="OTOS" />
+            <img src="../images/logo-icon.png" class="logo-shot" alt="O" />
+        </a>
+        <a href="#" class="brand d-none d-sm-block d-md-none d-sm-flex"  ><i class="fa-solid fa-xmark"></i></a>
+        <ul class="side-menu">
+            <li><a href="../main/main.html"><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg><span>Dashboard</span></a></li>
+            
+            <li>
+                <a href="#"><i class="bx bxs-inbox icon"></i> <span>Payments</span> <i class="fa fa-angle-right icon-right"></i></a>
+                <ul class="side-dropdown" >
+                    <li><a href="#">NFC Payments</a></li>
+                    <li><a href="#">Station Payments</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class='bx bxs-chart icon'></i> <span>Charts</span></a></li>
+            <li><a href="#"><i class='bx bxs-widget icon'></i> <span>Widget</span></a></li>
+            
+            <li><a href="#"><i class="bx bx-table icon"></i> Tables</a></li>
+            <li>
+                <a href=""><i class="bx bxs-notepad icon"></i> Forms <i class="bx bx-chevron-right icon-right"></i></a>
+                <ul class="side-dropdown">
+                    <li><a href="#">Basic</a></li>
+                    <li><a href="#">Select</a></li>
+                    <li><a href="#">Checkbox</a></li>
+                    <li><a href="#">Radio</a></li>
+                </ul>
+            </li>
+        </ul>
+        <div class="ads">
+            <div class="wrapper">
+                <!-- <a href="#" class="btn-upgrade">Upgrade</a> -->
+                <h6>OTOSONE</h6>
+                <p>Ready To Use Otosone</p>
+            </div>
+        </div>
+    </section>
+    <!-- SIDEBAR -->
+
+    <!-- NAVBAR -->
+    <section id="content">
+        <nav>
+            <i class='bx bx-menu toggle-sidebar'></i>
+            <form action="#">
+                <div class="form-group">
+                    <input type="text" placeholder="Search...">
+                    <i class='bx bx-search icon' ></i>
+                </div>
+            </form>
+            <a href="#" class="nav-notification">
+                <i class='bx bxs-bell icon' ></i>
+                <span class="badge">5</span>
+            </a>
+            <a href="#" class="nav-notification">
+                <i class='bx bxs-message-square-dots' ></i>
+                <span class="badge">8</span>
+            </a>
+            <span class="divider"></span>
+            <div class="profile">
+                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="">
+                <ul class="profile-link">
+                    <li><a href="#"><i class="bx bxs-user-circle icon"></i>Profile</a></li>
+                    <li><a href="#"><i class='bx bxs-cog'></i>Settings</a></li>
+                    <li><a href="#"><i class='bx bxs-log-out-circle' ></i>Logout</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!-- MAIN -->
+        <main>
+            <h1 class="title">Dashboard</h1>
+            <ul class="breadcrubs">
+                <li><a href="#">Home</a></li>
+                <li class="divider">/</li>
+                <li><a href="#" class="active">Dashboard</a></li>
+            </ul>
+            <div class="info-data">
+                <div class="card">
+                    <div class="head">
+                        <div>
+                            <h2>1500</h2>
+                            <p>Traffic</p>
+                        </div>
+                        <i class='bx bx-trending-up icon'></i>
+                    </div>
+                    <span class="progress" data-value="40"></span>
+                    <span class="label">40%</span>
+                </div>
+                <div class="card">
+                    <div class="head">
+                        <div>
+                            <h2>234</h2>
+                            <p>Sales</p>
+                        </div>
+                        <i class='bx bx-trending-down icon down'></i>
+                    </div>
+                    <span class="progress" data-value="60"></span>
+                    <span class="label">60%</span>
+                </div>
+                <div class="card">
+                    <div class="head">
+                        <div>
+                            <h2>465</h2>
+                            <p>Pageviews</p>
+                        </div>
+                        <i class='bx bx-trending-up icon'></i>
+                    </div>
+                    <span class="progress" data-value="30"></span>
+                    <span class="label">30%</span>
+                </div>
+                <div class="card">
+                    <div class="head">
+                        <div>
+                            <h2>235</h2>
+                            <p>visitors</p>
+                        </div>
+                        <i class='bx bx-trending-up icon'></i>
+                    </div>
+                    <span class="progress" data-value="80"></span>
+                    <span class="label">80%</span>
+                </div>
+            </div>
+            <div class="data">
+                <div class="content-data">
+                    <div class="head">
+                        <h3>Sales Report</h3>
+                        <div class="menu">
+                            <i class='bx bx-dots-horizontal-rounded icon'></i>
+                            <ul class="menu-link">
+                                <li><a href="#">Edit</a></li>
+                                <li><a href="#">Save</a></li>
+                                <li><a href="#">Remove</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="chart">
+                        <div id="chart"></div>
+                    </div>
+                </div>
+                <div class="content-data">
+                    <div class="head">
+                        <h3>Chatbox</h3>
+                        <div class="menu">
+                            <i class='bx bx-dots-horizontal-rounded icon'></i>
+                            <ul class="menu-link">
+                                <li><a href="#">Edit</a></li>
+                                <li><a href="#">Save</a></li>
+                                <li><a href="#">Remove</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="chat-box">
+                        <p class="day"><span>Today</span></p>
+                        <div class="msg">
+                            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="">            
+                            <div class="chat">
+                                <div class="profile">
+                                    <span class="username">Alan</span>
+                                    <span class="time">18:30</span>
+                                </div>
+                                <p>Hello</p>
+                            </div>
+                        </div>
+                        <div class="msg me">
+                                 
+                            <div class="chat">
+                                <div class="profile">
+                                    <span class="time">18:30</span>
+                                </div>
+                                <p>안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요</p>
+                            </div>
+                        </div>
+                        <div class="msg me">
+                            <div class="chat">
+                                <div class="profile">
+                                    <span class="time">18:30</span>
+                                </div>
+                                <p>안녕하세요안녕하세요</p>
+                            </div>
+                        </div>
+                        <div class="msg me">
+                            <div class="chat">
+                                <div class="profile">
+                                    <span class="time">18:30</span>
+                                </div>
+                                <p>니하오</p>
+                            </div>
+                        </div>
+                    </div>
+                    <form action="#">
+                        <div class="form-group">
+                            <input type="text" placeholder="Type...">
+                            <button type="submit" class="btn-send"><i class='bx bxs-send'></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <!-- MAIN -->
+    </section>
+    <!-- NAVBAR -->
+      
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js" integrity="sha512-24XP4a9KVoIinPFUbcnjIjAjtS59PUoxQj3GNVpWc86bCqPuy3YxAcxJrxFCxXe4GHtAumCbO2Ze2bddtuxaRw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="../js/script.js"></script>
+</body>
+</html>
