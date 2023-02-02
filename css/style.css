@@ -1,17 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
-
-* {
-    font-family: 'Open Sans', sans-serif;
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
-}
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap');
 
 :root {
-    --grey: #F1F0F6;
+    --theme-deafult: #7366ff;
+    --grey: #f8f8f8;
+    --black-02: #262932;
     --dark-grey: #8D8D8D;
-    --light: #fff;
-    --dark: #000;
+    --white: #fff;
+    --black: #000;
     --green: #81d43a;
     --light-green: #e3ffcB;
     --blue: #1775f1;
@@ -21,15 +16,33 @@
     --sidebar-width: 280px;
 	--sidebar-width-close: 80px;
 }
+
+* {
+    
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    
+}
+
 html {
     overflow-x: hidden;
 }
 body {
+    font-family: 'Rubik', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
     background-color: var(--grey);
 }
 
-a {
+/* 부트스트랩 margin 초기화 */
+p, figure, h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+a, a:active {
     text-decoration: none;
+    color:var(--black);
 }
 li {
     list-style: none;
@@ -41,7 +54,7 @@ li {
     position: fixed;
     max-width: 260px;
     width: 100%;
-    background-color: var(--light);
+    background-color: var(--black-02);
     top:0;
     left:0;
     height: 100%;
@@ -60,30 +73,54 @@ li {
     display:none;
 }
 
-#sidebar .brand {
+#sidebar .brand,
+#sidebar.hide:hover .brand {
     font-size: 24px;
     display: flex;
     align-items: center;
-    height: 64px;
+    justify-content: start;
+    height: 82px;
     font-weight: 700;
     color: var(--blue);
     position: sticky;
     top: 0;
     left: 0;
     z-index: 100;
-    background-color: var(--light);
+    background-color: var(--black-02);
     transition: all .3s ease;
-    padding: 0 6px;
+    padding: 0 6px 0 32px;
 }
 #sidebar.hide .brand{
-    justify-content: flex-start;
+    justify-content: center;
+    padding: 0 6px 0 6px;
 }
+
+
+
+#sidebar.hide .brand img.logo{
+    display:none;
+}
+#sidebar.hide:hover .brand img.logo{
+    display:block;
+}
+
+
+#sidebar .brand img.logo-shot,
+#sidebar.hide:hover .brand img.logo-shot{
+    display:none;
+}
+#sidebar.hide .brand img.logo-shot{
+    display:block;
+}
+
+
 #sidebar .icon {
     min-width: 48px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 6px;
+    
+    height:18px;
 }
 #sidebar .icon-right {
     margin-left: auto;
@@ -104,24 +141,37 @@ li {
     display: flex;
     align-items: center;
     font-size: 14px;
-    color: var(--dark);
+    color: rgba(255, 255, 255, 0.6);
     padding: 12px 16px 12px 0;
     transition: all .3s ease;
     border-radius: 10px;
     margin: 4px 0;
     white-space: nowrap;
+    min-height: 45px;
 }
-#sidebar .side-menu > li > a:hover{
-    background-color: var(--grey);
+
+#sidebar.hide .side-menu li > a > span,
+#sidebar.hide .side-menu li > a > span + i {
+    display:none;
 }
+#sidebar.hide:hover .side-menu li > a > span,
+#sidebar.hide:hover .side-menu li > a > span + i {
+    display:block;
+}
+
+
 #sidebar .side-menu > li > a.active .icon-right{
     transform: rotateZ(90deg);
 }
-#sidebar .side-menu > li > a.active,
-#sidebar .side-menu > li > a.active:hover {
-    background-color: var(--blue);
-    color: var(--light);
+#sidebar .side-menu > li > a.active{
+    background-color: rgba(115, 102, 255, 0.2);
+    color: var(--theme-deafult);
 }
+#sidebar .side-menu > li > a:hover,
+#sidebar .side-menu > li > a.active:hover{
+    background-color: rgba(115, 102, 255, 0.12) ;
+}
+
 
 #sidebar .divider {
     margin-top: 24px;
@@ -144,12 +194,29 @@ li {
     overflow: hidden;
     transition: all .3s ease;
 }
-#sidebar .side-dropdown.show{
-    max-height: 192px;    
+
+/* 
+#sidebar [data-height="2"].show{
+    height: 70px;
+}
+#sidebar [data-height="70"].show{
+    height: 70px;
+}
+#sidebar [data-height="70"].show{
+    height: 70px;
+} */
+
+#sidebar .side-dropdown a {
+    padding: 7px 16px 7px 0;
+    min-height: initial;
 }
 #sidebar .side-dropdown a.active, #sidebar .side-dropdown a:hover{
-    color: var(--blue);
+    color: var(--theme-deafult);
 }
+
+
+
+
 #sidebar .ads{
     width: 100%;
     padding: 20px;
@@ -161,17 +228,25 @@ li {
     display: none;
 }
 #sidebar .ads .wrapper{
-    background-color: var(--grey);
+    /* background-color: var(--grey); */
+    background-color: rgba(115, 102, 255, 0.06);
     padding: 20px;
     border-radius: 10px;
+    white-space: nowrap;
 }
+#sidebar .ads .wrapper h6{
+    color: var(--theme-deafult);
+    margin-bottom: 5px;
+    letter-spacing: 0.40px;
+}
+
 #sidebar .btn-upgrade{
     font-size: 14px;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 12px 0;
-    color: var(--light);
+    color: var(--white);
     background-color: var(--blue);
     transition: all .3s ease;
     border-radius: 5px;
@@ -183,8 +258,7 @@ li {
 }
 #sidebar .ads .wrapper p {
     font-size: 12px;
-    color: var(--dark-grey);
-    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
 }
 #sidebar .ads .wrapper p span{
     font-weight: 700;
@@ -204,7 +278,7 @@ li {
 }
 /* NAVBAR */
 nav{
-    background-color: var(--light);
+    background-color: var(--white);
     height: 64px;
     padding: 0 20px;
     display: flex;
@@ -244,14 +318,14 @@ nav .form-group .icon {
     top: 50%;
     transform: translateY(-50%);
     right: 16px;
-    color: var(--dark-grey);
+    color: var(--black-grey);
 }
 nav .nav-notification {
     position: relative;
 }
 nav .nav-notification .icon{
     font-size: 18px;
-    color: var(--dark);
+    color: var(--black);
 }
 nav .nav-notification .badge{
     position: absolute;
@@ -260,12 +334,12 @@ nav .nav-notification .badge{
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    border: 2px solid var(--light);
+    border: 2px solid var(--white);
     background-color: var(--red);
     display: flex;
     justify-content: center;
     align-items: center;
-    color:var(--light);
+    color:var(--white);
     font-size: 10px;
     font-weight: 700;
 }
@@ -289,7 +363,7 @@ nav .profile .profile-link{
     position: absolute;
     top: calc(100% + 10px);
     right: 0;
-    background-color: var(--light);
+    background-color: var(--white);
     padding: 10px 0;
     box-shadow: 4px 4px 16px rgba(0, 0, 0, .1);
     border-radius: 10px;
@@ -308,7 +382,7 @@ nav .profile .profile-link a{
     display: flex;
     grid-gap: 10px;
     font-size: 14px;
-    color: var(--dark);
+    color: var(--black);
     align-items: center;
 }
 nav .profile .profile-link a:hover{
@@ -353,7 +427,7 @@ main .info-data{
 main .info-data .card{
     padding: 20px;
     border-radius: 10px;
-    background-color: var(--light);
+    background-color: var(--white);
     box-shadow: 4px 4px 16px rgba(0, 0, 0, .05);
 }
 main  .card .head {
@@ -405,7 +479,7 @@ main .data .content-data{
     flex-grow:1;
     flex-basis: 400px;
     padding: 20px;
-    background-color: var(--light);
+    background-color: var(--white);
     border-radius: 10px;
     box-shadow: 4px 4px 16px rgba(0, 0, 0, .1);
 }
@@ -433,7 +507,7 @@ main .content-data .head .menu-link{
     top: calc(100% + 10px);
     right: 0;
     width: 140px;
-    background-color: var(--light);
+    background-color: var(--white);
     border-radius: 10px;
     box-shadow: 4px 4px 16px rgba(0, 0, 0, .1);
     padding: 10px 0;
@@ -451,7 +525,7 @@ main .content-data .head .menu-link a{
     display: block;
     padding: 6px 16px;
     font-size: 14px;
-    color: var(--dark);
+    color: var(--black);
     transition: all .3s ease;
 }
 main .content-data .head .menu-link a:hover{
@@ -519,7 +593,7 @@ main .chat-box .chat p{
 main .chat-box .msg:not(.me) .chat p{
     border-radius: 0 5px 5px 5px;
     background-color: var(--blue);
-    color: var(--light);
+    color: var(--white);
 }
 main .chat-box .msg.me{
     justify-content: flex-end;
@@ -556,7 +630,7 @@ main .btn-send {
     padding: 0 16px;
     background-color: var(--blue);
     border-radius: 5px;
-    color: var(--light);
+    color: var(--white);
 }
 /* MAIN */
 /* CONTENT */
@@ -591,7 +665,7 @@ main .btn-send {
 .card{
    
     border-radius: 10px;
-    background-color: var(--light);
+    background-color: var(--white);
     box-shadow: 4px 4px 16px rgba(0, 0, 0, .05);
     border: none !important;
 }
