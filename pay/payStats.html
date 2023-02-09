@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    
+
+</head>
+<body>
+    <section id="sidebar">
+        <a href="#" class="brand d-none d-md-flex" >
+            <img src="../images/logo_dark.png"  class="logo" alt="OTOS" />
+            <img src="../images/logo-icon.png" class="logo-shot" alt="O" />
+        </a>
+        <a href="#" class="brand d-none d-sm-block d-md-none d-sm-flex"  ><i class="fa-solid fa-xmark"></i></a>
+        <ul class="side-menu">
+            <li><a href="../main/main.html"><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg><span>Dashboard</span></a></li>
+            
+            <li>
+                <a href="#"><i class="bx bxs-inbox icon"></i> <span>Payments</span> <i class="fa fa-angle-right icon-right"></i></a>
+                <ul class="side-dropdown"  >
+                    <li><a href="../pay/payListNFC.html">NFC Payments</a></li>
+                    <li><a href="../pay/payStats.html">Station Payments</a></li>
+                </ul>
+            </li>
+            
+            <li>
+                <a href="#"><i class="bx bxs-inbox icon"></i> <span>Stations</span> <i class="fa fa-angle-right icon-right"></i></a>
+                <ul class="side-dropdown"  >
+                    <li><a href="../station/stationListReal.html">Running Stations </a></li>
+                    <li><a href="../station/nfcList.html">Horra NFC Cards</a></li>
+                    <li><a href="../station/stationEventList.html">Station Notifications</a></li>
+                    <li><a href="../station/firmware.html">Firmware</a></li>
+                    <li><a href="../station/main.html">Doors</a></li>
+                    <li><a href="../station/stationLog.html">Status Logs</a></li>
+                </ul>
+            </li>
+            
+            <li><a href="../member/member"><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg><span>Admin</span></a></li>
+
+            <li>
+                <a href="#"><i class="bx bxs-inbox icon"></i> <span>Base</span> <i class="fa fa-angle-right icon-right"></i></a>
+                <ul class="side-dropdown"  >
+                    <li><a href="/base/news.html">News & Notice</a></li>
+					<li><a href="/base/faq.html">FAQ List</a></li>
+                </ul>
+            </li>
+
+            
+        </ul>
+        <div class="ads">
+            <div class="wrapper">
+                <!-- <a href="#" class="btn-upgrade">Upgrade</a> -->
+                <h6>OTOSONE</h6>
+                <p>Ready To Use Otosone</p>
+            </div>
+        </div>
+    </section>
+    <!-- SIDEBAR -->
+
+    <!-- NAVBAR -->
+    <section id="content">
+        <nav>
+            <i class='bx bx-menu toggle-sidebar'></i>
+            <a class="nav-link fs-12 " href="../include/dbcontent" target="_blank" ><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bookmark"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg><span>OTOSONE DB</span></a>
+
+            <ul class="nav-menus">
+                <li class="onhover-dropdown">
+                    <div class="notification-box">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell"><path d="M22 17H2a3 3 0 0 0 3-3V9a7 7 0 0 1 14 0v5a3 3 0 0 0 3 3zm-8.27 4a2 2 0 0 1-3.46 0"></path></svg>
+                        <span class="badge rounded-pill badge-secondary">49971</span>
+                    </div>
+                    <ul class="notification-dropdown onhover-show-div" style="width:380px;max-height:500px;overflow-y: auto;" id="id_init_alarm">
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell"><path d="M22 17H2a3 3 0 0 0 3-3V9a7 7 0 0 1 14 0v5a3 3 0 0 0 3 3zm-8.27 4a2 2 0 0 1-3.46 0"></path></svg>
+                          <h6 class="f-18 mb-0">Notifications</h6>
+                        </li>
+                        <li>
+                          <p class="text-left">
+                              <span class="fs-11 txt-primary"><i class="fas fa-check-circle me-10"></i>OS10121091700011</span>
+                              <span class="fs-11 text-danger ms-10 me-auto">chargerEvent						</span><span class="pull-right">1 Sec</span>
+                          </p>
+                        </li>
+                                          <li>
+                          <p class="text-left">
+                              <span class="fs-11 txt-primary"><i class="fas fa-check-circle me-10"></i>OS10121091700011</span>
+                              <span class="fs-11 text-danger ms-10 me-auto">chargerEvent						</span><span class="pull-right">1 Sec</span>
+                          </p>
+                        </li>
+                                          <li>
+                          <p class="text-left">
+                              <span class="fs-11 txt-primary"><i class="fas fa-check-circle me-10"></i>OS10121083000002</span>
+                              <span class="fs-11 text-danger ms-10 me-auto">chargeDone						</span><span class="pull-right">40 Sec</span>
+                          </p>
+                        </li>
+                                          <li>
+                          <p class="text-left">
+                              <span class="fs-11 txt-primary"><i class="fas fa-check-circle me-10"></i>OS10121091700003</span>
+                              <span class="fs-11 text-danger ms-10 me-auto">chargeStart						</span><span class="pull-right">48 Sec</span>
+                          </p>
+                        </li>
+                                          <li>
+                          <p class="text-left">
+                              <span class="fs-11 txt-primary"><i class="fas fa-check-circle me-10"></i>OS10121051000001</span>
+                              <span class="fs-11 text-danger ms-10 me-auto">chargeStart						</span><span class="pull-right">1 Min</span>
+                          </p>
+                        </li>
+                                          <li>
+                          <p class="text-left">
+                              <span class="fs-11 txt-primary"><i class="fas fa-check-circle me-10"></i>OS10121091700014</span>
+                              <span class="fs-11 text-danger ms-10 me-auto">chargerEvent						</span><span class="pull-right">1 Min</span>
+                          </p>
+                        </li>
+                                          <li>
+                          <p class="text-left">
+                              <span class="fs-11 txt-primary"><i class="fas fa-check-circle me-10"></i>OS10121091700014</span>
+                              <span class="fs-11 text-danger ms-10 me-auto">chargerEvent						</span><span class="pull-right">1 Min</span>
+                          </p>
+                        </li>
+                                          <li>
+                          <p class="text-left">
+                              <span class="fs-11 txt-primary"><i class="fas fa-check-circle me-10"></i>OS10121091700014</span>
+                              <span class="fs-11 text-danger ms-10 me-auto">chargerEvent						</span><span class="pull-right">1 Min</span>
+                          </p>
+                        </li>
+                                          <li>
+                          <p class="text-left">
+                              <span class="fs-11 txt-primary"><i class="fas fa-check-circle me-10"></i>OS10121091700014</span>
+                              <span class="fs-11 text-danger ms-10 me-auto">chargerEvent						</span><span class="pull-right">1 Min</span>
+                          </p>
+                        </li>
+                                          <li>
+                          <p class="text-left">
+                              <span class="fs-11 txt-primary"><i class="fas fa-check-circle me-10"></i>OS10121051000001</span>
+                              <span class="fs-11 text-danger ms-10 me-auto">chargerEvent						</span><span class="pull-right">1 Min</span>
+                          </p>
+                        </li>
+                        
+                        <li><a class="btn btn-primary btn-sm" href="../station/stationEventList" data-bs-original-title="" title="">More</a></li>
+                      </ul>
+                </li>
+                <li class="profile-nav onhover-dropdown p-0 me-0">
+                    <div class="media profile-media">
+                        <img class="rounded-circle" src="../images/user/user.png" alt="">
+                        <div class="media-body"><span>Admin</span>
+                            <p class="mb-0 font-roboto">Admin <i class="middle fa fa-angle-down"></i></p>
+                        </div>
+                    </div>
+                    <ul class="profile-dropdown onhover-show-div">
+                        <li><a href="../logout" data-bs-original-title="" title=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-log-in"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path><polyline points="10 17 15 12 10 7"></polyline><line x1="15" y1="12" x2="3" y2="12"></line></svg><span>Sign out</span></a></li>
+                    </ul>
+                  </li>
+            </ul>
+
+            
+        </nav>
+        <!-- MAIN -->
+        <main>
+            <div class="container-fluid">
+                <div class="page-title">
+                    <div class="row">
+                        <div class="col-6">
+                            <h3>Station Payments</h3>
+                        </div>
+                        <div class="col-6">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index" data-bs-original-title="" title=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></a></li>
+                                <li class="breadcrumb-item">Payments</li>
+								<li class="breadcrumb-item active">Station Payments</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- container-fluid -->
+              
+
+            <!-- Container-fluid starts-->
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="table-responsive product-table">
+                                    <table class="display table table-bordered text-center">
+                                        <thead class="">
+                                            <tr>
+                                                <th>
+                                                    <select class="form-select fs-12" id="id_da1" required="" name="da1" onchange="js_paystation('')">
+                                                        <option value="2023" selected="">2023</option>
+                                                        <option value="2022">2022</option>
+                                                        <option value="2021">2021</option>
+                                                    </select>
+                                                </th>
+                                                <th colspan="13">
+                                                    <select class="form-select fs-12" id="id_sw" required="" name="sw" onchange="js_paystation('')">
+                                                        <option value="">All Station</option>
+                                                        <option value="OS10121051000018">OS10121051000018 연구소시험용02</option>
+                                                        <option value="OS10121083000002">OS10121083000002 해남01</option>
+                                                        <option value="OS10121091700015">OS10121091700015 창원 총판</option>
+                                                        <option value="OS10121091700005">OS10121091700005 창원 장유 허브</option>
+                                                        <option value="OS10121051000005">OS10121051000005 CE safty 인증</option>
+                                                        <option value="OS10121051000004">OS10121051000004 본사신규07</option>
+                                                        <option value="OS10121051000008">OS10121051000008 본사신규05</option>
+                                                        <option value="OS10121051000003">OS10121051000003 본사신규06</option>
+                                                        <option value="OS10121051000015">OS10121051000015 CE인증</option>
+                                                        <option value="OS10121051000007">OS10121051000007 본사신규08</option>
+                                                        <option value="OS10121051000010">OS10121051000010 본사신규03</option>
+                                                        <option value="OS10121051000009">OS10121051000009 본사신규02</option>
+                                                        <option value="OS10121051000016">OS10121051000016 HORRA</option>
+                                                        <option value="OS10121051000002">OS10121051000002 EMA(연구소시험용)</option>
+                                                        <option value="OS10121051000001">OS10121051000001 창원 상남 허브</option>
+                                                        <option value="OS10121091700011">OS10121091700011 창원 석동 허브</option>
+                                                        <option value="OS10121091700014">OS10121091700014 창원 반지반림 허브</option>
+                                                        <option value="OS10121091700001">OS10121091700001 본사(시험용)</option>
+                                                        <option value="OS10121083000010">OS10121083000010 창원 도계 허브</option>
+                                                        <option value="OS10121083000009">OS10121083000009 창원 신마산 허브</option>
+                                                        <option value="OS10121091700006">OS10121091700006 교체</option>
+                                                        <option value="OS10121091700007">OS10121091700007 창원 세븐일레븐 팔용중앙</option>
+                                                        <option value="OS10121091700013">OS10121091700013 CU인계시티점NEW</option>
+                                                        <option value="OS10121091700004">OS10121091700004 CU은혜NEW</option>
+                                                        <option value="OS10121091700009">OS10121091700009 진바이크NEW</option>
+                                                        <option value="OS10121091700002">OS10121091700002 매탄동NEW</option>
+                                                        <option value="OS10121091700003">OS10121091700003 창원 신월 허브</option>
+                                                        <option value="OS10121091700012">OS10121091700012 창원 사림동 장독짜장</option>
+                                                    </select>
+                                                </th>
+                                            </tr>
+                                            <tr>
+                                                <th>2023</th>
+                                                <th>1</th>
+                                                <th style="background-color:#e5e5e5">2</th>
+                                                <th>3</th>
+                                                <th>4</th>
+                                                <th>5</th>
+                                                <th>6</th>
+                                                <th>7</th>
+                                                <th>8</th>
+                                                <th>9</th>
+                                                <th>10</th>
+                                                <th>11</th>
+                                                <th>12</th>
+                                                <th>Total</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Amount(ETB)</td>
+                                                                                                        <td class="fs-14">
+                                                    <a href="javascript:js_paystation('1')" class="font-333 text-decoration-underline" data-bs-original-title="" title="">6,006,570</a>
+                                                </td>
+                                                                                                        <td class="fs-14" style="background-color:#e5e5e5">
+                                                    <a href="javascript:js_paystation('2')" class="font-333 text-decoration-underline" data-bs-original-title="" title="">1,271,570</a>
+                                                </td>
+                                                                                                        <td class="fs-14">
+                                                    <a href="javascript:js_paystation('3')" class="font-333 text-decoration-underline" data-bs-original-title="" title="">0</a>
+                                                </td>
+                                                                                                        <td class="fs-14">
+                                                    <a href="javascript:js_paystation('4')" class="font-333 text-decoration-underline" data-bs-original-title="" title="">0</a>
+                                                </td>
+                                                                                                        <td class="fs-14">
+                                                    <a href="javascript:js_paystation('5')" class="font-333 text-decoration-underline" data-bs-original-title="" title="">0</a>
+                                                </td>
+                                                                                                        <td class="fs-14">
+                                                    <a href="javascript:js_paystation('6')" class="font-333 text-decoration-underline" data-bs-original-title="" title="">0</a>
+                                                </td>
+                                                                                                        <td class="fs-14">
+                                                    <a href="javascript:js_paystation('7')" class="font-333 text-decoration-underline" data-bs-original-title="" title="">0</a>
+                                                </td>
+                                                                                                        <td class="fs-14">
+                                                    <a href="javascript:js_paystation('8')" class="font-333 text-decoration-underline" data-bs-original-title="" title="">0</a>
+                                                </td>
+                                                                                                        <td class="fs-14">
+                                                    <a href="javascript:js_paystation('9')" class="font-333 text-decoration-underline" data-bs-original-title="" title="">0</a>
+                                                </td>
+                                                                                                        <td class="fs-14">
+                                                    <a href="javascript:js_paystation('10')" class="font-333 text-decoration-underline" data-bs-original-title="" title="">0</a>
+                                                </td>
+                                                                                                        <td class="fs-14">
+                                                    <a href="javascript:js_paystation('11')" class="font-333 text-decoration-underline" data-bs-original-title="" title="">0</a>
+                                                </td>
+                                                                                                        <td class="fs-14">
+                                                    <a href="javascript:js_paystation('12')" class="font-333 text-decoration-underline" data-bs-original-title="" title="">0</a>
+                                                </td>
+                                                                                                        <td class="fw-bold fs-14 font-blue">7,278,140</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Number of payments</td>
+                                                <td class="fs-14"><a href="javascript:js_paystation('1')" class="font-333 text-decoration-underline" data-bs-original-title="" title="">3,098</a></td>
+                                                <td class="fs-14" style="background-color:#e5e5e5"><a href="javascript:js_paystation('2')" class="font-333 text-decoration-underline" data-bs-original-title="" title="">684</a></td>
+                                                <td class="fs-14"><a href="javascript:js_paystation('3')" class="font-333 text-decoration-underline" data-bs-original-title="" title="">0</a></td>
+                                                <td class="fs-14"><a href="javascript:js_paystation('4')" class="font-333 text-decoration-underline" data-bs-original-title="" title="">0</a></td>
+                                                <td class="fs-14"><a href="javascript:js_paystation('5')" class="font-333 text-decoration-underline" data-bs-original-title="" title="">0</a></td>
+                                                <td class="fs-14"><a href="javascript:js_paystation('6')" class="font-333 text-decoration-underline" data-bs-original-title="" title="">0</a></td>
+                                                <td class="fs-14"><a href="javascript:js_paystation('7')" class="font-333 text-decoration-underline" data-bs-original-title="" title="">0</a></td>
+                                                <td class="fs-14"><a href="javascript:js_paystation('8')" class="font-333 text-decoration-underline" data-bs-original-title="" title="">0</a></td>
+                                                <td class="fs-14"><a href="javascript:js_paystation('9')" class="font-333 text-decoration-underline" data-bs-original-title="" title="">0</a></td>
+                                                <td class="fs-14"><a href="javascript:js_paystation('10')" class="font-333 text-decoration-underline" data-bs-original-title="" title="">0</a></td>
+                                                <td class="fs-14"><a href="javascript:js_paystation('11')" class="font-333 text-decoration-underline" data-bs-original-title="" title="">0</a></td>
+                                                <td class="fs-14"><a href="javascript:js_paystation('12')" class="font-333 text-decoration-underline" data-bs-original-title="" title="">0</a></td>
+                                                <td class="fw-bold fs-14 font-blue">3,782</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-12 box-col-12">
+                        <div class="card">
+
+                            <div class="card-body ">
+                                <p class="fs-14 fw-bold mb-15"><i class="fas fa-chart-bar fs-18 me-5"></i>2023Year 02Month Time</p>
+                                <div class="table-responsive product-table">
+                                    <table class="display table table-border-vertical table-text-center table-hover">
+                                        <colgroup><col width="auto"><col width="auto"></colgroup>
+                                        <thead class="table-dark">
+                                            <tr>
+                                                <th>Transaction date</th>
+                                                <th>Number payments</th>
+                                                <th>Amount</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+												
+                                            <tr>
+                                                <td class="text-center">00</td>
+                                                <td class="text-center">13</td>
+                                                <td class="text-center">23,510</td>
+                                            </tr>
+                                        
+                                            <tr>
+                                                <td class="text-center">01</td>
+                                                <td class="text-center">6</td>
+                                                <td class="text-center">12,230</td>
+                                            </tr>
+                                        
+                                            <tr>
+                                                <td class="text-center">02</td>
+                                                <td class="text-center">1</td>
+                                                <td class="text-center">2,100</td>
+                                            </tr>
+                                        
+                                            <tr>
+                                                <td class="text-center">04</td>
+                                                <td class="text-center">1</td>
+                                                <td class="text-center">1,150</td>
+                                            </tr>
+                                        
+                                            <tr>
+                                                <td class="text-center">05</td>
+                                                <td class="text-center">1</td>
+                                                <td class="text-center">2,520</td>
+                                            </tr>
+                                        
+                                            <tr>
+                                                <td class="text-center">06</td>
+                                                <td class="text-center">1</td>
+                                                <td class="text-center">2,200</td>
+                                            </tr>
+                                        
+                                            <tr>
+                                                <td class="text-center">07</td>
+                                                <td class="text-center">4</td>
+                                                <td class="text-center">8,310</td>
+                                            </tr>
+                                        
+                                            <tr>
+                                                <td class="text-center">08</td>
+                                                <td class="text-center">7</td>
+                                                <td class="text-center">16,030</td>
+                                            </tr>
+                                        
+                                            <tr>
+                                                <td class="text-center">09</td>
+                                                <td class="text-center">10</td>
+                                                <td class="text-center">19,470</td>
+                                            </tr>
+                                        
+                                            <tr>
+                                                <td class="text-center">10</td>
+                                                <td class="text-center">33</td>
+                                                <td class="text-center">63,240</td>
+                                            </tr>
+                                        
+                                            <tr>
+                                                <td class="text-center">11</td>
+                                                <td class="text-center">44</td>
+                                                <td class="text-center">76,100</td>
+                                            </tr>
+                                        
+                                            <tr>
+                                                <td class="text-center">12</td>
+                                                <td class="text-center">49</td>
+                                                <td class="text-center">90,280</td>
+                                            </tr>
+                                        
+                                            <tr>
+                                                <td class="text-center">13</td>
+                                                <td class="text-center">46</td>
+                                                <td class="text-center">86,720</td>
+                                            </tr>
+                                        
+                                            <tr>
+                                                <td class="text-center">14</td>
+                                                <td class="text-center">52</td>
+                                                <td class="text-center">94,590</td>
+                                            </tr>
+                                        
+                                            <tr>
+                                                <td class="text-center">15</td>
+                                                <td class="text-center">39</td>
+                                                <td class="text-center">74,790</td>
+                                            </tr>
+                                        
+                                            <tr>
+                                                <td class="text-center">16</td>
+                                                <td class="text-center">43</td>
+                                                <td class="text-center">78,420</td>
+                                            </tr>
+                                        
+                                            <tr>
+                                                <td class="text-center">17</td>
+                                                <td class="text-center">56</td>
+                                                <td class="text-center">92,490</td>
+                                            </tr>
+                                        
+                                            <tr>
+                                                <td class="text-center">18</td>
+                                                <td class="text-center">52</td>
+                                                <td class="text-center">101,500</td>
+                                            </tr>
+                                        
+                                            <tr>
+                                                <td class="text-center">19</td>
+                                                <td class="text-center">79</td>
+                                                <td class="text-center">154,410</td>
+                                            </tr>
+                                        
+                                            <tr>
+                                                <td class="text-center">20</td>
+                                                <td class="text-center">50</td>
+                                                <td class="text-center">96,710</td>
+                                            </tr>
+                                        
+                                            <tr>
+                                                <td class="text-center">21</td>
+                                                <td class="text-center">42</td>
+                                                <td class="text-center">75,080</td>
+                                            </tr>
+                                        
+                                            <tr>
+                                                <td class="text-center">22</td>
+                                                <td class="text-center">32</td>
+                                                <td class="text-center">58,800</td>
+                                            </tr>
+                                        
+                                            <tr>
+                                                <td class="text-center">23</td>
+                                                <td class="text-center">23</td>
+                                                <td class="text-center">40,920</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-12 box-col-12">
+                        <div class="card">
+
+                            <div class="card-body ">
+                                <p class="fs-14 fw-bold mb-15"><i class="fas fa-chart-bar fs-18 me-5"></i>2023Year 02Month Day</p>
+                                <div class="table-responsive product-table">
+                                    <table class="display table table-border-vertical table-text-center table-hover">
+                                        <colgroup><col width="20%"><col width="auto"></colgroup>
+                                        <thead class="table-dark">
+                                            <tr>
+                                                <th>Transaction date</th>
+                                                <th>Number payments</th>
+                                                <th>Amount</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+												
+                                            <tr>
+                                                <td class="text-center">2023-02-01</td>
+                                                <td class="text-center">101</td>
+                                                <td class="text-center">182,170</td>
+                                            </tr>
+                                        
+                                            <tr>
+                                                <td class="text-center">2023-02-02</td>
+                                                <td class="text-center">117</td>
+                                                <td class="text-center">216,290</td>
+                                            </tr>
+                                        
+                                            <tr>
+                                                <td class="text-center">2023-02-03</td>
+                                                <td class="text-center">117</td>
+                                                <td class="text-center">220,730</td>
+                                            </tr>
+                                        
+                                            <tr>
+                                                <td class="text-center">2023-02-04</td>
+                                                <td class="text-center">128</td>
+                                                <td class="text-center">245,710</td>
+                                            </tr>
+                                        
+                                            <tr>
+                                                <td class="text-center">2023-02-05</td>
+                                                <td class="text-center">106</td>
+                                                <td class="text-center">197,650</td>
+                                            </tr>
+                                        
+                                            <tr>
+                                                <td class="text-center">2023-02-06</td>
+                                                <td class="text-center">111</td>
+                                                <td class="text-center">199,840</td>
+                                            </tr>
+                                        
+                                            <tr>
+                                                <td class="text-center">2023-02-07</td>
+                                                <td class="text-center">4</td>
+                                                <td class="text-center">9,180</td>
+                                            </tr>
+                                        
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-12 box-col-12">
+                        <div class="card">
+
+                            <div class="card-body ">
+                                <p class="fs-14 fw-bold mb-15"><i class="fas fa-chart-bar fs-18 me-5"></i>2023Year/02Month/Day of the week</p>
+                                <div class="table-responsive product-table">
+                                    <table class="display table table-border-vertical table-text-center table-hover">
+
+                                        <colgroup><col width="20%"><col width="auto"></colgroup>
+                                        <thead class="table-dark">
+                                            <tr>
+                                                <th>Day of the week</th>
+                                                <th>Number payments</th>
+                                                <th>Amount</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+<td class="text-center">일</td>
+<td class="text-center">106</td>
+<td class="text-center">197,650</td>
+</tr>
+                                            <tr>
+<td class="text-center">월</td>
+<td class="text-center">111</td>
+<td class="text-center">199,840</td>
+</tr>
+                                            <tr>
+<td class="text-center">화</td>
+<td class="text-center">4</td>
+<td class="text-center">9,180</td>
+</tr>
+                                            <tr>
+<td class="text-center">수</td>
+<td class="text-center">101</td>
+<td class="text-center">182,170</td>
+</tr>
+                                            <tr>
+<td class="text-center">목</td>
+<td class="text-center">117</td>
+<td class="text-center">216,290</td>
+</tr>
+                                            <tr>
+<td class="text-center">금</td>
+<td class="text-center">117</td>
+<td class="text-center">220,730</td>
+</tr>
+                                            <tr>
+<td class="text-center">토</td>
+<td class="text-center">128</td>
+<td class="text-center">245,710</td>
+</tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- row -->
+
+                <div class="row">
+                    <!--   그래프 모음-->
+							<div class="col-lg-8 col-md-12 box-col-12">
+								<div class="card">
+									<div class="card-header">
+										<p class="fs-14 fw-bold"><i class="fas fa-chart-bar fs-18 me-5"></i>2023Year 02Month/Day Amount</p>
+									</div>
+									<div class="card-body chart-block">
+										<div class="flot-chart-container">
+											<div class="flot-chart-placeholder" id="line-chart1"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-lg-4 col-md-12 box-col-12">
+								<div class="card">
+									<div class="card-header">
+										<p class="fs-14 fw-bold"><i class="fas fa-chart-bar fs-18 me-5"></i>2023Year/Month Amount
+
+                                        </p>
+									</div>
+									<div class="card-body chart-block">
+										<div class="flot-chart-container">
+											<div class="flot-chart-placeholder" id="line-chart3"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-lg-8 col-md-12 box-col-12">
+								<div class="card">
+									<div class="card-header">
+										<p class="fs-14 fw-bold"><i class="fas fa-chart-bar fs-18 me-5"></i>2023Year 02Month Day payments
+
+                                        </p>
+									</div>
+									<div class="card-body chart-block">
+										<div class="flot-chart-container">
+											<div class="flot-chart-placeholder" id="line-chart2"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+
+
+							<div class="col-lg-4 col-md-12 box-col-12">
+								<div class="card">
+									<div class="card-header">
+										<p class="fs-14 fw-bold"><i class="fas fa-chart-bar fs-18 me-5"></i>2023Year/Month payments
+
+                                        </p>
+									</div>
+									<div class="card-body chart-block">
+										<div class="flot-chart-container">
+											<div class="flot-chart-placeholder" id="line-chart4"></div>
+										</div>
+									</div>
+								</div>
+							</div><!-- //  그래프 모음-->
+                </div>
+            </div><!-- //Container-fluid Ends-->
+        </main>
+        <!-- MAIN -->
+
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12 footer-copyright text-center">
+                        <p class="text-end fs-12 font-999">Copyright 2023 ©OTOSONE. Made by Elaza</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </section>
+    <!-- NAVBAR -->
+      
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js" integrity="sha512-24XP4a9KVoIinPFUbcnjIjAjtS59PUoxQj3GNVpWc86bCqPuy3YxAcxJrxFCxXe4GHtAumCbO2Ze2bddtuxaRw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="../js/script.js"></script>
+    <script>
+       function js_paystation(x){
+            var sw = $("#id_sw").val();
+            var da1 = $("#id_da1").val();
+            location.href='?sw='+sw+'&da1='+da1+'&da2='+x;
+        }
+
+        //APEXCHART
+
+var options1 = {
+    series: [{
+    name: 'Day amounts',
+    data: [182170, 216290, 220730, 245710, 197650, 199840, 9180]
+  }],
+    chart: {
+    height: 350,
+    type: 'line'
+  },
+  dataLabels: {
+    enabled: false
+  },
+  stroke: {
+    curve: 'smooth'
+    // curve: 'straight'
+  },
+  colors: [
+    '#7366FF'
+  ],
+  markers: {
+    size: 5,
+   },
+  grid: {
+        row: {
+        colors: ['#f3f3f3', 'transparent'], // takes an array which will be repeated on columns
+        opacity: 0.5
+        },
+    },
+  xaxis: {
+    categories: ["2023-02-01", "2023-02-02", "2023-02-03", "2023-02-04", "2023-02-05", "2023-02-06", "2023-02-07"]
+  },
+};
+
+var options2 = {
+    series: [{
+    name: 'Day number payments',
+    data: [101, 117, 117, 128, 106, 111, 4]
+  }],
+    chart: {
+    height: 350,
+    type: 'line'
+  },
+  dataLabels: {
+    enabled: false
+  },
+  stroke: {
+    curve: 'smooth'
+    // curve: 'straight'
+  },
+  colors: [
+    '#F73164'
+  ],
+  markers: {
+    size: 5,
+   },
+  grid: {
+        row: {
+        colors: ['#f3f3f3', 'transparent'], // takes an array which will be repeated on columns
+        opacity: 0.5
+        },
+    },
+  xaxis: {
+    categories: ["2023-02-01", "2023-02-02", "2023-02-03", "2023-02-04", "2023-02-05", "2023-02-06", "2023-02-07"]
+  },
+};
+var options3 = {
+    series: [{
+    name: 'Month number payments',
+    data: [6006570, 1271570, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  }],
+    chart: {
+    height: 350,
+    type: 'line'
+  },
+  dataLabels: {
+    enabled: false
+  },
+  stroke: {
+    curve: 'smooth'
+    // curve: 'straight'
+  },
+  colors: [
+    '#7366FF'
+  ],
+  markers: {
+    size: 5,
+   },
+  grid: {
+        row: {
+        colors: ['#f3f3f3', 'transparent'], // takes an array which will be repeated on columns
+        opacity: 0.5
+        },
+    },
+  xaxis: {
+    categories: ["2023-01", "2023-02", "2023-03", "2023-04", "2023-05", "2023-06", "2023-07", "2023-08", "2023-09", "2023-10", "2023-11", "2023-12"]
+  },
+};
+
+var options4 = {
+    series: [{
+    name: 'Month number payments',
+    data: [3098, 684, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  }],
+    chart: {
+    height: 350,
+    type: 'line'
+  },
+  dataLabels: {
+    enabled: false
+  },
+  stroke: {
+    curve: 'smooth'
+    // curve: 'straight'
+  },
+  colors: [
+    '#F73164'
+  ],
+  markers: {
+    size: 5,
+   },
+  grid: {
+        row: {
+        colors: ['#f3f3f3', 'transparent'], // takes an array which will be repeated on columns
+        opacity: 0.5
+        },
+    },
+  xaxis: {
+    categories: ["2023-01", "2023-02", "2023-03", "2023-04", "2023-05", "2023-06", "2023-07", "2023-08", "2023-09", "2023-10", "2023-11", "2023-12"]
+  },
+};
+
+  var chart1 = new ApexCharts(document.querySelector("#line-chart1"), options1);
+  var chart2 = new ApexCharts(document.querySelector("#line-chart2"), options2);
+  var chart3 = new ApexCharts(document.querySelector("#line-chart3"), options3);
+  var chart4 = new ApexCharts(document.querySelector("#line-chart4"), options4);
+  chart1.render();
+  chart2.render();
+  chart3.render();
+  chart4.render();
+    </script>
+</body>
+</html>

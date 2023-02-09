@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    
+
+</head>
+<body>
+    <section id="sidebar">
+        <a href="#" class="brand d-none d-md-flex" >
+            <img src="../images/logo_dark.png"  class="logo" alt="OTOS" />
+            <img src="../images/logo-icon.png" class="logo-shot" alt="O" />
+        </a>
+        <a href="#" class="brand d-none d-sm-block d-md-none d-sm-flex"  ><i class="fa-solid fa-xmark"></i></a>
+        <ul class="side-menu">
+            <li><a href="../main/main.html"><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg><span>Dashboard</span></a></li>
+            
+            <li>
+                <a href="#"><i class="bx bxs-inbox icon"></i> <span>Payments</span> <i class="fa fa-angle-right icon-right"></i></a>
+                <ul class="side-dropdown"  >
+                    <li><a href="../pay/payListNFC.html">NFC Payments</a></li>
+                    <li><a href="../pay/payStats.html">Station Payments</a></li>
+                </ul>
+            </li>
+            
+            <li>
+                <a href="#"><i class="bx bxs-inbox icon"></i> <span>Stations</span> <i class="fa fa-angle-right icon-right"></i></a>
+                <ul class="side-dropdown"  >
+                    <li><a href="../station/stationListReal.html">Running Stations </a></li>
+                    <li><a href="../station/nfcList.html">Horra NFC Cards</a></li>
+                    <li><a href="../station/stationEventList.html">Station Notifications</a></li>
+                    <li><a href="../station/firmware.html">Firmware</a></li>
+                    <li><a href="../station/main.html">Doors</a></li>
+                    <li><a href="../station/stationLog.html">Status Logs</a></li>
+                </ul>
+            </li>
+            
+            <li><a href="../member/member"><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg><span>Admin</span></a></li>
+
+            <li>
+                <a href="#"><i class="bx bxs-inbox icon"></i> <span>Base</span> <i class="fa fa-angle-right icon-right"></i></a>
+                <ul class="side-dropdown"  >
+                    <li><a href="/base/news.html">News & Notice</a></li>
+					<li><a href="/base/faq.html">FAQ List</a></li>
+                </ul>
+            </li>
+
+            
+        </ul>
+        <div class="ads">
+            <div class="wrapper">
+                <!-- <a href="#" class="btn-upgrade">Upgrade</a> -->
+                <h6>OTOSONE</h6>
+                <p>Ready To Use Otosone</p>
+            </div>
+        </div>
+    </section>
+    <!-- SIDEBAR -->
+
+    <!-- NAVBAR -->
+    <section id="content">
+        <nav>
+            <i class='bx bx-menu toggle-sidebar'></i>
+            <a class="nav-link fs-12 " href="../include/dbcontent" target="_blank" ><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bookmark"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg><span>OTOSONE DB</span></a>
+
+            <ul class="nav-menus">
+                <li class="onhover-dropdown">
+                    <div class="notification-box">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell"><path d="M22 17H2a3 3 0 0 0 3-3V9a7 7 0 0 1 14 0v5a3 3 0 0 0 3 3zm-8.27 4a2 2 0 0 1-3.46 0"></path></svg>
+                        <span class="badge rounded-pill badge-secondary">49971</span>
+                    </div>
+                    <ul class="notification-dropdown onhover-show-div" style="width:380px;max-height:500px;overflow-y: auto;" id="id_init_alarm">
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell"><path d="M22 17H2a3 3 0 0 0 3-3V9a7 7 0 0 1 14 0v5a3 3 0 0 0 3 3zm-8.27 4a2 2 0 0 1-3.46 0"></path></svg>
+                          <h6 class="f-18 mb-0">Notifications</h6>
+                        </li>
+                        <li>
+                          <p class="text-left">
+                              <span class="fs-11 txt-primary"><i class="fas fa-check-circle me-10"></i>OS10121091700011</span>
+                              <span class="fs-11 text-danger ms-10 me-auto">chargerEvent						</span><span class="pull-right">1 Sec</span>
+                          </p>
+                        </li>
+                                          <li>
+                          <p class="text-left">
+                              <span class="fs-11 txt-primary"><i class="fas fa-check-circle me-10"></i>OS10121091700011</span>
+                              <span class="fs-11 text-danger ms-10 me-auto">chargerEvent						</span><span class="pull-right">1 Sec</span>
+                          </p>
+                        </li>
+                                          <li>
+                          <p class="text-left">
+                              <span class="fs-11 txt-primary"><i class="fas fa-check-circle me-10"></i>OS10121083000002</span>
+                              <span class="fs-11 text-danger ms-10 me-auto">chargeDone						</span><span class="pull-right">40 Sec</span>
+                          </p>
+                        </li>
+                                          <li>
+                          <p class="text-left">
+                              <span class="fs-11 txt-primary"><i class="fas fa-check-circle me-10"></i>OS10121091700003</span>
+                              <span class="fs-11 text-danger ms-10 me-auto">chargeStart						</span><span class="pull-right">48 Sec</span>
+                          </p>
+                        </li>
+                                          <li>
+                          <p class="text-left">
+                              <span class="fs-11 txt-primary"><i class="fas fa-check-circle me-10"></i>OS10121051000001</span>
+                              <span class="fs-11 text-danger ms-10 me-auto">chargeStart						</span><span class="pull-right">1 Min</span>
+                          </p>
+                        </li>
+                                          <li>
+                          <p class="text-left">
+                              <span class="fs-11 txt-primary"><i class="fas fa-check-circle me-10"></i>OS10121091700014</span>
+                              <span class="fs-11 text-danger ms-10 me-auto">chargerEvent						</span><span class="pull-right">1 Min</span>
+                          </p>
+                        </li>
+                                          <li>
+                          <p class="text-left">
+                              <span class="fs-11 txt-primary"><i class="fas fa-check-circle me-10"></i>OS10121091700014</span>
+                              <span class="fs-11 text-danger ms-10 me-auto">chargerEvent						</span><span class="pull-right">1 Min</span>
+                          </p>
+                        </li>
+                                          <li>
+                          <p class="text-left">
+                              <span class="fs-11 txt-primary"><i class="fas fa-check-circle me-10"></i>OS10121091700014</span>
+                              <span class="fs-11 text-danger ms-10 me-auto">chargerEvent						</span><span class="pull-right">1 Min</span>
+                          </p>
+                        </li>
+                                          <li>
+                          <p class="text-left">
+                              <span class="fs-11 txt-primary"><i class="fas fa-check-circle me-10"></i>OS10121091700014</span>
+                              <span class="fs-11 text-danger ms-10 me-auto">chargerEvent						</span><span class="pull-right">1 Min</span>
+                          </p>
+                        </li>
+                                          <li>
+                          <p class="text-left">
+                              <span class="fs-11 txt-primary"><i class="fas fa-check-circle me-10"></i>OS10121051000001</span>
+                              <span class="fs-11 text-danger ms-10 me-auto">chargerEvent						</span><span class="pull-right">1 Min</span>
+                          </p>
+                        </li>
+                        
+                        <li><a class="btn btn-primary btn-sm" href="../station/stationEventList" data-bs-original-title="" title="">More</a></li>
+                      </ul>
+                </li>
+                <li class="profile-nav onhover-dropdown p-0 me-0">
+                    <div class="media profile-media">
+                        <img class="rounded-circle" src="../images/user/user.png" alt="">
+                        <div class="media-body"><span>Admin</span>
+                            <p class="mb-0 font-roboto">Admin <i class="middle fa fa-angle-down"></i></p>
+                        </div>
+                    </div>
+                    <ul class="profile-dropdown onhover-show-div">
+                        <li><a href="../logout" data-bs-original-title="" title=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-log-in"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path><polyline points="10 17 15 12 10 7"></polyline><line x1="15" y1="12" x2="3" y2="12"></line></svg><span>Sign out</span></a></li>
+                    </ul>
+                  </li>
+            </ul>
+
+            
+        </nav>
+        <!-- MAIN -->
+        <main>
+            <div class="container-fluid mb-50">
+                <div class="row pt-20">
+                    <div class="col-12 col-sm-12 col-md-8 col-lg-6 col-xl-5">
+                        <div class="card mb-5">
+                            <div class="card-body">
+                                <select class="form-select fs-12" id="validationCustom04" onchange="js_select(this.value)">
+                                    <option value="83" selected="">OS10121051000018 연구소시험용02</option>
+                                    <option value="69">OS10121051000016 HORRA</option>
+                                    <option value="64">OS10121051000002 EMA(연구소시험용)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row ">
+                    <div class="col-12 col-sm-12 col-md-8 col-lg-6 col-xl-5">
+                        <div class="card">
+                            <div class="card-header pb-20">
+                                <h5>OS10121051000018 연구소시험용02</h5>
+                                <p class="mt-5"><button class="btn btn-secondary btn-sm" style="width:120px;" type="button" data-bs-toggle="tooltip" title="" onclick="js_reset()" data-bs-original-title="스테이션을 리셋합니다.">스테이션 리셋</button></p>
+                                <span>
+                                    개방하려는 도어 체크 후 확인을 클릭해주세요.<br>도어 개방만 가능합니다.
+                                </span>
+                            </div>
+                            <style>
+                                td{text-align:center;height:100px;line-height:70px;}
+                                .btn{padding:10px 2px;border-radius:5px;width:38px;margin:0}
+                                .btn-primary {background-color: #0d6efd !important;	border-color: #0d6efd !important;}
+                                .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active {background-color: #045cdc !important;	border-color: #045cdc !important;}
+                                .font-10{font-size:10px;}
+                            </style>
+                            <form action="mainOK.php" method="post" name="command_station_f">
+                            <input type="hidden" name="sw" value="OS10121051000018" data-bs-original-title="" title="">
+                            <input type="hidden" name="slotCount" value="16" data-bs-original-title="" title="">
+                            <div class="card-body">
+                                <div class="row">
+                                    <table class="table table-bordered" style="width:100%;">
+                                        <tbody>
+                                            <tr>
+                                                <td colspan="2">
+                                                    <p class="mb-0 fs-14"><input type="checkbox" name="lock0" value="Y" data-bs-original-title="" title=""></p>
+                                                    <span class="btn btn-square btn-light h-60 lineheight-10 mt-0">01<br><span class="fs-10">0%</span></span>
+                                                </td>
+                                                <td class="bg-e5"></td>
+                                                <td colspan="2">
+                                                    <p class="mb-0 fs-14"><input type="checkbox" name="lock1" value="Y" data-bs-original-title="" title=""></p>
+                                                    <span class="btn btn-square btn-light h-60 lineheight-10">02<br><span class="fs-10">0%</span></span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p class="mb-0 fs-14"><input type="checkbox" name="lock2" value="Y" data-bs-original-title="" title=""></p>
+                                                     <span class="btn btn-square btn-light h-60 lineheight-10">03<br><span class="fs-10">0%</span></span>
+                                                </td>
+                                                <td>
+                                                    <p class="mb-0 fs-14"><input type="checkbox" name="lock3" value="Y" data-bs-original-title="" title=""></p>
+                                                     <span class="btn btn-square btn-light h-60 lineheight-10">04<br><span class="fs-10">0%</span></span>
+                                                </td>
+                                                <td class="bg-e5"></td>
+                                                <td>
+                                                     <p class="mb-0 fs-14"><input type="checkbox" name="lock4" value="Y" data-bs-original-title="" title=""></p>
+                                                     <span class="btn btn-square btn-light h-60 lineheight-10">05<br><span class="fs-10">0%</span></span>
+                                                </td>
+                                                <td>
+                                                     <p class="mb-0 fs-14"><input type="checkbox" name="lock5" value="Y" data-bs-original-title="" title=""></p>
+                                                     <span class="btn btn-square btn-light h-60 lineheight-10">06<br><span class="fs-10">0%</span></span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p class="mb-0 fs-14"><input type="checkbox" name="lock6" value="Y" data-bs-original-title="" title=""></p>
+                                                    <span class="btn btn-square btn-light h-60 lineheight-10">07<br><span class="fs-10">0%</span></span>
+                                                </td>
+                                                <td>
+                                                    <p class="mb-0 fs-14"><input type="checkbox" name="lock7" value="Y" data-bs-original-title="" title=""></p>
+                                                    <span class="btn btn-square btn-light h-60 lineheight-10">08<br><span class="fs-10">0%</span></span>
+                                                </td>
+                                                <td>
+                                                    <p class="mb-0 fs-14"><input type="checkbox" name="lock8" value="Y" data-bs-original-title="" title=""></p>
+                                                    <span class="btn btn-square btn-light h-60 lineheight-10">09<br><span class="fs-10">0%</span></span>
+                                                </td>
+                                                <td>
+                                                    <p class="mb-0 fs-14"><input type="checkbox" name="lock9" value="Y" data-bs-original-title="" title=""></p>
+                                                    <span class="btn btn-square btn-light h-60 lineheight-10">10<br><span class="fs-10">0%</span></span>
+                                                </td>
+                                                <td>
+                                                    <p class="mb-0 fs-14"><input type="checkbox" name="lock10" value="Y" data-bs-original-title="" title=""></p>
+                                                    <span class="btn btn-square btn-light h-60 lineheight-10">11<br><span class="fs-10">0%</span></span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p class="mb-0 fs-14"><input type="checkbox" name="lock11" value="Y" data-bs-original-title="" title=""></p>
+                                                    <span class="btn btn-square btn-light h-60 lineheight-10">12<br><span class="fs-10">0%</span></span>
+                                                </td>
+                                                <td>
+                                                    <p class="mb-0 fs-14"><input type="checkbox" name="lock12" value="Y" data-bs-original-title="" title=""></p>
+                                                    <span class="btn btn-square btn-light h-60 lineheight-10">13<br><span class="fs-10">0%</span></span>
+                                                </td>
+                                                <td>
+                                                    <p class="mb-0 fs-14"><input type="checkbox" name="lock13" value="Y" data-bs-original-title="" title=""></p>
+                                                    <span class="btn btn-square btn-light h-60 lineheight-10">14<br><span class="fs-10">0%</span></span>
+                                                </td>
+                                                <td>
+                                                    <p class="mb-0 fs-14"><input type="checkbox" name="lock14" value="Y" data-bs-original-title="" title=""></p>
+                                                    <span class="btn btn-square btn-light h-60 lineheight-10">15<br><span class="fs-10">0%</span></span>
+                                                </td>
+                                                <td>
+                                                    <p class="mb-0 fs-14"><input type="checkbox" name="lock15" value="Y" data-bs-original-title="" title=""></p>
+                                                    <span class="btn btn-square btn-light h-60 lineheight-10">16<br><span class="fs-10">0%</span></span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div><!--row -->
+                                <div class="row mt-30 mb-0">
+                                    <h5 class="fs-14">ChargingSequence(총 6가지)</h5>
+                                    <div class="col-sm-12 mt-10">
+                                        <button class="btn btn-primary btn-square h-80 fs-11 mb-10 w-80 ps-5 pe-5" data-bs-original-title="" title="">Complete</button><!-- ChargingSequence가 COMPLETE -->
+                                        <button class="btn btn-square btn-secondary h-80 fs-11 mb-10 w-80 ps-5 pe-5" data-bs-original-title="" title="">PreCharge<br>PostCharge<br>StableTime</button><!-- ChargingSequence가 POST_CHARGE 또는 젤 최근에 batteryIn 된 2개를 제외 -->
+                                        <button class="btn btn-square btn-light h-80 fs-11 mb-10 w-80 ps-5 pe-5" data-bs-original-title="" title="">Idle</button><!-- ChargingSequence가 IDLE -->
+                                        <button class="btn btn-square btn-dark h-80 fs-11 mb-10 w-80 ps-5 pe-5" data-bs-original-title="" title="">NorCharge</button>
+                                    </div>
+                                </div>
+                            </div><!--card-body -->
+                            </form>
+                        </div><!-- card -->
+                        
+                        <div class="col text-end mb-20">
+                            <div>
+                                <span id="id_btn1"><a class="btn btn-danger  w-120 " href="javascript:js_OK()" data-bs-original-title="" title="">확인(도어개방)</a></span>
+                                <span style="display:none" id="id_btn2"><a class="btn btn-danger  w-100 " data-bs-original-title="" title="">전송중</a></span>
+                                <a class="btn btn-warning mr-10 d-block  d-lg-none w-100 " href="/logout" data-bs-original-title="" title="">로그아웃</a>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- row -->
+            </div><!--// Container-fluid Ends-->
+            
+        </main>
+        <!-- MAIN -->
+
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12 footer-copyright text-center">
+                        <p class="text-end fs-12 font-999">Copyright 2023 ©OTOSONE. Made by Elaza</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </section>
+    <!-- NAVBAR -->
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js" integrity="sha512-24XP4a9KVoIinPFUbcnjIjAjtS59PUoxQj3GNVpWc86bCqPuy3YxAcxJrxFCxXe4GHtAumCbO2Ze2bddtuxaRw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="../js/script.js"></script>
+    <script>
+        function js_OK(){
+            document.command_station_f.target="hiddenfrm";
+            $("#id_btn1").hide();
+            $("#id_btn2").show();
+            document.command_station_f.submit()
+        }
+        function js_select(v){
+            location.href='?seq='+v;
+        }
+        function js_reset(){
+            if(confirm("리셋하시겠습니까?")) hiddenfrm.location.replace('mainOK.php?mot=reset&sw=OS10121051000018');
+        }
+    </script>
+</body>
+</html>

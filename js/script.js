@@ -6,7 +6,7 @@
 function lnbLoad(){
     var navDepth1Node = document.querySelectorAll("#sidebar ul.side-menu > li > a");
     var navDepth2Node = document.querySelectorAll("#sidebar ul.side-menu > li > ul.side-dropdown > li > a");
-    var navDepth2Height = document.querySelector("#sidebar ul.side-menu > li > ul.side-dropdown > li");
+    // var navDepth2Height = document.querySelector("#sidebar ul.side-menu > li > ul.side-dropdown > li");
 
     const allDropdown = document.querySelectorAll('#sidebar .side-dropdown');
     const sidebar = document.getElementById('sidebar');
@@ -30,8 +30,11 @@ function lnbLoad(){
         const a = item.parentElement.querySelector('a:first-child');
         a.classList.remove('active');
         item.classList.remove('show');
-        
-        item.dataset.height = navDepth2Height.offsetHeight * item.children.length;
+        // console.log(navDepth2Height.offsetHeight);
+        // console.log(item.children.length);
+        // item.dataset.height = navDepth2Height.offsetHeight * item.children.length;
+        // navDepth2Height.offsetHeight 을 제대로 인식 못할때가 있어서 상수로 표시함
+        item.dataset.height = 35 * item.children.length;
          item.style.setProperty("--value", `${item.dataset.height}px`) 
     })
     
@@ -131,14 +134,21 @@ function lnbLoad(){
             });
 
         } else {
-            // allSideDiveder.forEach(item => {
-            //     item.textContent = item.dataset.text;
-            // })
+           
             sidebarWide();
+            if (matchMedia("screen and (max-width: 768px)").matches) {
+                document.querySelector('body').insertAdjacentHTML('afterbegin',
+                '<div class="bg-overlay active"></div>');
+                document.querySelector(".bg-overlay")?.addEventListener("click", function(){
+                    this.remove();
+                    sidebar.classList.toggle('hide');
+                })
+            } 
+            // 768px 보다 작으면 <div class="bg-overlay active"></div> 추가
+
         }
     });
-
-
+    
 
     sidebar.addEventListener('mouseleave', function () {
         if(this.classList.contains('hide')){
@@ -187,17 +197,17 @@ lnbLoad(); // lnb 메뉴 활성화
 function sidebarWide(){
     const aActive = document.querySelector("#sidebar ul.side-menu > li > a.active");
     console.log(aActive);
-    aActive.nextElementSibling?.classList.add("show") ;
+    aActive?.nextElementSibling?.classList.add("show") ;
 }
 
 //profile dropdow
-const profile = document.querySelector("nav .profile");
-const imgProfile = profile.querySelector("img");
-const dropdownProfile = profile.querySelector(".profile-link");
+// const profile = document.querySelector("nav .profile");
+// const imgProfile = profile.querySelector("img");
+// const dropdownProfile = profile.querySelector(".profile-link");
 
-imgProfile.addEventListener("click", function(){
-    dropdownProfile.classList.toggle("show");
-});
+// imgProfile.addEventListener("click", function(){
+//     dropdownProfile.classList.toggle("show");
+// });
 
 
 //Menu
@@ -213,28 +223,28 @@ allMenu.forEach(item => {
 })
 
 
-window.addEventListener("click", function(e){
-    if (e.target !== imgProfile) {
-        if (e.target !== dropdownProfile) {
-            if (dropdownProfile.classList.contains("show")) {
-                dropdownProfile.classList.remove("show");
-            }
-        }    
-    }
+// window.addEventListener("click", function(e){
+//     if (e.target !== imgProfile) {
+//         if (e.target !== dropdownProfile) {
+//             if (dropdownProfile.classList.contains("show")) {
+//                 dropdownProfile.classList.remove("show");
+//             }
+//         }    
+//     }
     
-    allMenu.forEach(item => {
-        const icon = item.querySelector(".icon");
-        const menuLink = item.querySelector(".menu-link");
+//     allMenu.forEach(item => {
+//         const icon = item.querySelector(".icon");
+//         const menuLink = item.querySelector(".menu-link");
     
-        if (e.target !== icon) {
-            if (e.target !== menuLink) {
-                if (menuLink.classList.contains("show")) {
-                    menuLink.classList.remove("show");
-                }
-            }    
-        }
-    })
-})
+//         if (e.target !== icon) {
+//             if (e.target !== menuLink) {
+//                 if (menuLink.classList.contains("show")) {
+//                     menuLink.classList.remove("show");
+//                 }
+//             }    
+//         }
+//     })
+// })
 
 
 // PROGRESSBAR
@@ -245,40 +255,10 @@ allProgress.forEach(item => {
    
 })
 
+// Tooltip
+const tooltips = document.querySelectorAll("[data-bs-toggle]");
+tooltips?.forEach(t=> {
+    new bootstrap.Tooltip(t);
+})
 
 
-
-
-//APEXCHART
-
-var options = {
-    series: [{
-    name: 'series1',
-    data: [31, 40, 28, 51, 42, 109, 100]
-  }, {
-    name: 'series2',
-    data: [11, 32, 45, 32, 34, 52, 41]
-  }],
-    chart: {
-    height: 350,
-    type: 'area'
-  },
-  dataLabels: {
-    enabled: false
-  },
-  stroke: {
-    curve: 'smooth'
-  },
-  xaxis: {
-    type: 'datetime',
-    categories: ["2018-09-19T00:00:00.000Z", "2018-09-19T01:30:00.000Z", "2018-09-19T02:30:00.000Z", "2018-09-19T03:30:00.000Z", "2018-09-19T04:30:00.000Z", "2018-09-19T05:30:00.000Z", "2018-09-19T06:30:00.000Z"]
-  },
-  tooltip: {
-    x: {
-      format: 'dd/MM/yy HH:mm'
-    },
-  },
-  };
-
-  var chart = new ApexCharts(document.querySelector("#chart"), options);
-  chart.render();

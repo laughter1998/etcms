@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    
+
+</head>
+<body>
+    <section id="sidebar">
+        <a href="#" class="brand d-none d-md-flex" >
+            <img src="../images/logo_dark.png"  class="logo" alt="OTOS" />
+            <img src="../images/logo-icon.png" class="logo-shot" alt="O" />
+        </a>
+        <a href="#" class="brand d-none d-sm-block d-md-none d-sm-flex"  ><i class="fa-solid fa-xmark"></i></a>
+        <ul class="side-menu">
+            <li><a href="../main/main.html"><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg><span>Dashboard</span></a></li>
+            
+            <li>
+                <a href="#"><i class="bx bxs-inbox icon"></i> <span>Payments</span> <i class="fa fa-angle-right icon-right"></i></a>
+                <ul class="side-dropdown"  >
+                    <li><a href="../pay/payListNFC.html">NFC Payments</a></li>
+                    <li><a href="../pay/payStats.html">Station Payments</a></li>
+                </ul>
+            </li>
+            
+            <li>
+                <a href="#"><i class="bx bxs-inbox icon"></i> <span>Stations</span> <i class="fa fa-angle-right icon-right"></i></a>
+                <ul class="side-dropdown"  >
+                    <li><a href="../station/stationListReal.html">Running Stations </a></li>
+                    <li><a href="../station/nfcList.html">Horra NFC Cards</a></li>
+                    <li><a href="../station/stationEventList.html">Station Notifications</a></li>
+                    <li><a href="../station/firmware.html">Firmware</a></li>
+                    <li><a href="../station/main.html">Doors</a></li>
+                    <li><a href="../station/stationLog.html">Status Logs</a></li>
+                </ul>
+            </li>
+            
+            <li><a href="../member/member"><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg><span>Admin</span></a></li>
+
+            <li>
+                <a href="#"><i class="bx bxs-inbox icon"></i> <span>Base</span> <i class="fa fa-angle-right icon-right"></i></a>
+                <ul class="side-dropdown"  >
+                    <li><a href="/base/news.html">News & Notice</a></li>
+					<li><a href="/base/faq.html">FAQ List</a></li>
+                </ul>
+            </li>
+
+            
+        </ul>
+        <div class="ads">
+            <div class="wrapper">
+                <!-- <a href="#" class="btn-upgrade">Upgrade</a> -->
+                <h6>OTOSONE</h6>
+                <p>Ready To Use Otosone</p>
+            </div>
+        </div>
+    </section>
+    <!-- SIDEBAR -->
+
+    <!-- NAVBAR -->
+    <section id="content">
+        <nav>
+            <i class='bx bx-menu toggle-sidebar'></i>
+            <a class="nav-link fs-12 " href="../include/dbcontent" target="_blank" ><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bookmark"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg><span>OTOSONE DB</span></a>
+
+            <ul class="nav-menus">
+                <li class="onhover-dropdown">
+                    <div class="notification-box">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell"><path d="M22 17H2a3 3 0 0 0 3-3V9a7 7 0 0 1 14 0v5a3 3 0 0 0 3 3zm-8.27 4a2 2 0 0 1-3.46 0"></path></svg>
+                        <span class="badge rounded-pill badge-secondary">49971</span>
+                    </div>
+                    <ul class="notification-dropdown onhover-show-div" style="width:380px;max-height:500px;overflow-y: auto;" id="id_init_alarm">
+                        <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell"><path d="M22 17H2a3 3 0 0 0 3-3V9a7 7 0 0 1 14 0v5a3 3 0 0 0 3 3zm-8.27 4a2 2 0 0 1-3.46 0"></path></svg>
+                          <h6 class="f-18 mb-0">Notifications</h6>
+                        </li>
+                        <li>
+                          <p class="text-left">
+                              <span class="fs-11 txt-primary"><i class="fas fa-check-circle me-10"></i>OS10121091700011</span>
+                              <span class="fs-11 text-danger ms-10 me-auto">chargerEvent						</span><span class="pull-right">1 Sec</span>
+                          </p>
+                        </li>
+                                          <li>
+                          <p class="text-left">
+                              <span class="fs-11 txt-primary"><i class="fas fa-check-circle me-10"></i>OS10121091700011</span>
+                              <span class="fs-11 text-danger ms-10 me-auto">chargerEvent						</span><span class="pull-right">1 Sec</span>
+                          </p>
+                        </li>
+                                          <li>
+                          <p class="text-left">
+                              <span class="fs-11 txt-primary"><i class="fas fa-check-circle me-10"></i>OS10121083000002</span>
+                              <span class="fs-11 text-danger ms-10 me-auto">chargeDone						</span><span class="pull-right">40 Sec</span>
+                          </p>
+                        </li>
+                                          <li>
+                          <p class="text-left">
+                              <span class="fs-11 txt-primary"><i class="fas fa-check-circle me-10"></i>OS10121091700003</span>
+                              <span class="fs-11 text-danger ms-10 me-auto">chargeStart						</span><span class="pull-right">48 Sec</span>
+                          </p>
+                        </li>
+                                          <li>
+                          <p class="text-left">
+                              <span class="fs-11 txt-primary"><i class="fas fa-check-circle me-10"></i>OS10121051000001</span>
+                              <span class="fs-11 text-danger ms-10 me-auto">chargeStart						</span><span class="pull-right">1 Min</span>
+                          </p>
+                        </li>
+                                          <li>
+                          <p class="text-left">
+                              <span class="fs-11 txt-primary"><i class="fas fa-check-circle me-10"></i>OS10121091700014</span>
+                              <span class="fs-11 text-danger ms-10 me-auto">chargerEvent						</span><span class="pull-right">1 Min</span>
+                          </p>
+                        </li>
+                                          <li>
+                          <p class="text-left">
+                              <span class="fs-11 txt-primary"><i class="fas fa-check-circle me-10"></i>OS10121091700014</span>
+                              <span class="fs-11 text-danger ms-10 me-auto">chargerEvent						</span><span class="pull-right">1 Min</span>
+                          </p>
+                        </li>
+                                          <li>
+                          <p class="text-left">
+                              <span class="fs-11 txt-primary"><i class="fas fa-check-circle me-10"></i>OS10121091700014</span>
+                              <span class="fs-11 text-danger ms-10 me-auto">chargerEvent						</span><span class="pull-right">1 Min</span>
+                          </p>
+                        </li>
+                                          <li>
+                          <p class="text-left">
+                              <span class="fs-11 txt-primary"><i class="fas fa-check-circle me-10"></i>OS10121091700014</span>
+                              <span class="fs-11 text-danger ms-10 me-auto">chargerEvent						</span><span class="pull-right">1 Min</span>
+                          </p>
+                        </li>
+                                          <li>
+                          <p class="text-left">
+                              <span class="fs-11 txt-primary"><i class="fas fa-check-circle me-10"></i>OS10121051000001</span>
+                              <span class="fs-11 text-danger ms-10 me-auto">chargerEvent						</span><span class="pull-right">1 Min</span>
+                          </p>
+                        </li>
+                        
+                        <li><a class="btn btn-primary btn-sm" href="../station/stationEventList" data-bs-original-title="" title="">More</a></li>
+                      </ul>
+                </li>
+                <li class="profile-nav onhover-dropdown p-0 me-0">
+                    <div class="media profile-media">
+                        <img class="rounded-circle" src="../images/user/user.png" alt="">
+                        <div class="media-body"><span>Admin</span>
+                            <p class="mb-0 font-roboto">Admin <i class="middle fa fa-angle-down"></i></p>
+                        </div>
+                    </div>
+                    <ul class="profile-dropdown onhover-show-div">
+                        <li><a href="../logout" data-bs-original-title="" title=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-log-in"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path><polyline points="10 17 15 12 10 7"></polyline><line x1="15" y1="12" x2="3" y2="12"></line></svg><span>Sign out</span></a></li>
+                    </ul>
+                  </li>
+            </ul>
+
+            
+        </nav>
+        <!-- MAIN -->
+        <main>
+            <div class="container-fluid">
+                <div class="page-title">
+                    <div class="row">
+                        <div class="col-6">
+                            <h3>Running Stations</h3>
+                        </div>
+                        <div class="col-6">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index" data-bs-original-title="" title=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></a></li>
+                                <li class="breadcrumb-item">Stations</li>
+								<li class="breadcrumb-item active">Running Stations</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- container-fluid -->
+              
+
+            <!-- Container-fluid starts-->
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 ">
+                        <div class="card">
+                                <div class="card-body">
+                                    <a href="?seq=64" class="btn btn-light btn-sm mb-5 " data-bs-original-title="" title=""><span class="font-primary font-11">OS10121051000002</span>(EMA(연구소시험용))</a>
+                                    <a href="?seq=69" class="btn btn-light btn-sm mb-5 " data-bs-original-title="" title=""><span class="font-primary font-11">OS10121051000016</span>(HORRA)</a>
+                                    <a href="?seq=83" class="btn btn-light btn-sm mb-5 " data-bs-original-title="" title=""><span class="font-primary font-11">OS10121051000018</span>(연구소시험용02)</a>
+                                </div>
+                        </div><!--// class="card" -->
+                    </div>
+
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+
+                        <!-- 스테이션 1개 -->
+                        <div class="card" id="64">
+                            <div class="job-search ">
+                                <div class="card-body ">
+                                    <div class="media">
+                                        <a href="stationReg?seq=64" data-bs-original-title="" title=""><img src="../images/sample/st_sample3.png" alt="" class="me-20 rounded-3" style="width:100px"></a>
+                                        <div class="media-body">
+                                            <h6 class="fw-600 mt-10">
+                                                <a href="stationReg?seq=64" data-bs-original-title="" title="">OS10121051000002 EMA(연구소시험용)</a> (NFC Card)
+                                            </h6>
+                                            <p class="mb-5 mt-10"><a href="stationReg?seq=64" class="font-666" data-bs-original-title="" title="">Launch time : 2023-02-07 / Update 2023-02-07 11:22:47</a></p>
+                                            <div class="mt-10">
+                                                <button type="button" class=" btn btn-primary btn-sm mb-10 ms-20" data-bs-toggle="modal" data-bs-target="#modalStationBtn01" data-bs-seq="OS10121051000002" data-bs-btype="4" data-bs-bname="ChargerNoti" data-bs-original-title="" title="">ChargerNoti</button>
+                                                <button type="button" class=" btn btn-primary btn-sm mb-10" data-bs-toggle="modal" data-bs-target="#modalStationBtn01" data-bs-seq="OS10121051000002" data-bs-btype="5" data-bs-bname="BatteryNoti" data-bs-original-title="" title="">BatteryNoti</button>
+                                                <button type="button" class=" btn btn-primary btn-sm mb-10" data-bs-toggle="modal" data-bs-target="#modalStationBtn01" data-bs-seq="OS10121051000002" data-bs-btype="6" data-bs-bname="결제결과" data-bs-original-title="" title="">Payments </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- charger 충전상태 -->
+                                    <div class="row mt-10">
+                                        <div class="table-responsive product-table">
+                                            <table class="table  st_progbar table-bordered table-border-vertical text-center">
+                                                <thead class="table-dark">
+                                                    <tr>
+                                                        <th colspan="2">Socket</th>
+                                                        <th colspan="2">SOC</th>
+                                                        <th>Charging<br>SEQ</th>
+                                                        <th>Charger<br>TEMP</th>
+                                                        <th>Battery<br>SN</th>
+                                                        <th>Battery<br>Alarm</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="station-OS10121051000002">
+                                                    <tr>
+                                                        <td class=" text-danger">00</td>
+                                                        <!-- 소켓on인경우 ignore/normar에 따른 배출조건에 참여하고, off인경우 on되기전까지 무조건 ignore배출조건(배출암됨)에 해당-->
+                                                        <td class="">
+                                                            <span class="badge badge-primary fs-10 fw-normal" style="cursor:pointer" onclick="js_openclose('N','632')" id="id_opencY_632">ON</span>
+                                                            <span class="badge badge-danger fs-10 fw-normal" style="cursor:pointer;display:none" onclick="js_openclose('Y','632')" id="id_opencN_632">OFF</span>
+                                                         </td>
+                                                        <td class=" text-danger">100%</td>
+                                                        <td style="width:120px;">
+                                                            <div class="progress sm-progress-bar ">
+                                                                <div class="progress-bar-animated bg-info progress-bar-striped" role="progressbar" style="width:100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="">COMPLETE</td>
+                                                        <td class="">25</td>
+                                                        <td class="">211108-00175</td>
+                                                        <td class="">40.7</td>
+                                                    </tr>
+                                                                                                                <tr>
+                                                        <td class=" text-danger">01</td>
+                                                        <!-- 소켓on인경우 ignore/normar에 따른 배출조건에 참여하고, off인경우 on되기전까지 무조건 ignore배출조건(배출암됨)에 해당-->
+                                                        <td class="">
+                                                            <span class="badge badge-primary fs-10 fw-normal" style="cursor:pointer" onclick="js_openclose('N','633')" id="id_opencY_633">ON</span>
+                                                            <span class="badge badge-danger fs-10 fw-normal" style="cursor:pointer;display:none" onclick="js_openclose('Y','633')" id="id_opencN_633">OFF</span>
+                                                         </td>
+                                                        <td class=" text-danger">100%</td>
+                                                        <td class=" w-120">
+                                                            <div class="progress sm-progress-bar " style="width:120px;">
+                                                                <div class="progress-bar-animated bg-info progress-bar-striped" role="progressbar" style="width:100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="">COMPLETE</td>
+                                                        <td class="">26</td>
+                                                        <td class="">211223-00113</td>
+                                                        <td class=""> true</td>
+                                                    </tr>
+                                                                                                                <tr>
+                                                        <td class=" text-danger">02</td>
+                                                        <!-- 소켓on인경우 ignore/normar에 따른 배출조건에 참여하고, off인경우 on되기전까지 무조건 ignore배출조건(배출암됨)에 해당-->
+                                                        <td class="">
+                                                            <span class="badge badge-primary fs-10 fw-normal" style="cursor:pointer" onclick="js_openclose('N','634')" id="id_opencY_634">ON</span>
+                                                            <span class="badge badge-danger fs-10 fw-normal" style="cursor:pointer;display:none" onclick="js_openclose('Y','634')" id="id_opencN_634">OFF</span>
+                                                         </td>
+                                                        <td class=" text-danger">100%</td>
+                                                        <td class=" w-120">
+                                                            <div class="progress sm-progress-bar " style="width:120px;">
+                                                                <div class="progress-bar-animated bg-info progress-bar-striped" role="progressbar" style="width:100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="">COMPLETE</td>
+                                                        <td class="">26</td>
+                                                        <td class="">210812-00079</td>
+                                                        <td class=""> true</td>
+                                                    </tr>
+                                                                                                                <tr>
+                                                        <td class=" text-danger">03</td>
+                                                        <!-- 소켓on인경우 ignore/normar에 따른 배출조건에 참여하고, off인경우 on되기전까지 무조건 ignore배출조건(배출암됨)에 해당-->
+                                                        <td class="">
+                                                            <span class="badge badge-primary fs-10 fw-normal" style="cursor:pointer" onclick="js_openclose('N','635')" id="id_opencY_635">ON</span>
+                                                            <span class="badge badge-danger fs-10 fw-normal" style="cursor:pointer;display:none" onclick="js_openclose('Y','635')" id="id_opencN_635">OFF</span>
+                                                         </td>
+                                                        <td class=" text-danger">100%</td>
+                                                        <td class=" w-120">
+                                                            <div class="progress sm-progress-bar " style="width:120px;">
+                                                                <div class="progress-bar-animated bg-info progress-bar-striped" role="progressbar" style="width:100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="">COMPLETE</td>
+                                                        <td class="">25</td>
+                                                        <td class="">210812-00093</td>
+                                                        <td class=""> true</td>
+                                                    </tr>
+                                                                                                                <tr>
+                                                        <td class=" text-danger">04</td>
+                                                        <!-- 소켓on인경우 ignore/normar에 따른 배출조건에 참여하고, off인경우 on되기전까지 무조건 ignore배출조건(배출암됨)에 해당-->
+                                                        <td class="">
+                                                            <span class="badge badge-primary fs-10 fw-normal" style="cursor:pointer" onclick="js_openclose('N','636')" id="id_opencY_636">ON</span>
+                                                            <span class="badge badge-danger fs-10 fw-normal" style="cursor:pointer;display:none" onclick="js_openclose('Y','636')" id="id_opencN_636">OFF</span>
+                                                         </td>
+                                                        <td class=" text-danger">0%</td>
+                                                        <td class=" w-120">
+                                                            <div class="progress sm-progress-bar " style="width:120px;">
+                                                                <div class="progress-bar-animated bg-info progress-bar-striped" role="progressbar" style="width:0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="">IDLE</td>
+                                                        <td class="">29</td>
+                                                        <td class=""></td>
+                                                        <td class=""> true</td>
+                                                    </tr>
+                                                                                                                <tr>
+                                                        <td class=" text-danger">05</td>
+                                                        <!-- 소켓on인경우 ignore/normar에 따른 배출조건에 참여하고, off인경우 on되기전까지 무조건 ignore배출조건(배출암됨)에 해당-->
+                                                        <td class="">
+                                                            <span class="badge badge-primary fs-10 fw-normal" style="cursor:pointer" onclick="js_openclose('N','637')" id="id_opencY_637">ON</span>
+                                                            <span class="badge badge-danger fs-10 fw-normal" style="cursor:pointer;display:none" onclick="js_openclose('Y','637')" id="id_opencN_637">OFF</span>
+                                                         </td>
+                                                        <td class=" text-danger">0%</td>
+                                                        <td class=" w-120">
+                                                            <div class="progress sm-progress-bar " style="width:120px;">
+                                                                <div class="progress-bar-animated bg-info progress-bar-striped" role="progressbar" style="width:0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                        </td>
+                                                        <!--<td class=" text-danger font-bold" ></td>-->
+                                                        <td class="">IDLE</td>
+                                                        <td class="">29</td>
+                                                        <td class=""></td>
+                                                        <!--td class=""> 0</td>
+                                                        <td class=""> 0.2</td>
+                                                        <td class="">0 / 0 / <strong class="text-danger">0</strong></td-->
+                                                        <td class=""> true</td>
+                                                    </tr>
+                                                                                                                <tr>
+                                                        <td class=" text-danger">06</td>
+                                                        <!-- 소켓on인경우 ignore/normar에 따른 배출조건에 참여하고, off인경우 on되기전까지 무조건 ignore배출조건(배출암됨)에 해당-->
+                                                        <td class="">
+                                                            <span class="badge badge-primary fs-10 fw-normal" style="cursor:pointer" onclick="js_openclose('N','638')" id="id_opencY_638">ON</span>
+                                                            <span class="badge badge-danger fs-10 fw-normal" style="cursor:pointer;display:none" onclick="js_openclose('Y','638')" id="id_opencN_638">OFF</span>
+                                                         </td>
+                                                        <td class=" text-danger">100%</td>
+                                                        <td class=" w-120">
+                                                            <div class="progress sm-progress-bar " style="width:120px;">
+                                                                <div class="progress-bar-animated bg-info progress-bar-striped" role="progressbar" style="width:100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                        </td>
+                                                        <!--<td class=" text-danger font-bold" >Done</td>-->
+                                                        <td class="">COMPLETE</td>
+                                                        <td class="">26</td>
+                                                        <td class="">211108-00099</td>
+                                                        <!--td class=""> 40.7</td>
+                                                        <td class=""> 0.3</td>
+                                                        <td class="">7 / 0 / <strong class="text-danger">7</strong></td-->
+                                                        <td class=""> true</td>
+                                                    </tr>
+                                                                                                                <tr>
+                                                        <td class=" text-danger">07</td>
+                                                        <!-- 소켓on인경우 ignore/normar에 따른 배출조건에 참여하고, off인경우 on되기전까지 무조건 ignore배출조건(배출암됨)에 해당-->
+                                                        <td class="">
+                                                            <span class="badge badge-primary fs-10 fw-normal" style="cursor:pointer" onclick="js_openclose('N','639')" id="id_opencY_639">ON</span>
+                                                            <span class="badge badge-danger fs-10 fw-normal" style="cursor:pointer;display:none" onclick="js_openclose('Y','639')" id="id_opencN_639">OFF</span>
+                                                         </td>
+                                                        <td class=" text-danger">100%</td>
+                                                        <td class=" w-120">
+                                                            <div class="progress sm-progress-bar " style="width:120px;">
+                                                                <div class="progress-bar-animated bg-info progress-bar-striped" role="progressbar" style="width:100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                        </td>
+                                                        <!--<td class=" text-danger font-bold" >Done</td>-->
+                                                        <td class="">COMPLETE</td>
+                                                        <td class="">25</td>
+                                                        <td class="">211108-00173</td>
+                                                        <!--td class=""> 40.8</td>
+                                                        <td class=""> 0</td>
+                                                        <td class="">70 / 0 / <strong class="text-danger">70</strong></td-->
+                                                        <td class=""> true</td>
+                                                    </tr>
+                                                                                                                <tr>
+                                                        <td class=" text-danger">08</td>
+                                                        <!-- 소켓on인경우 ignore/normar에 따른 배출조건에 참여하고, off인경우 on되기전까지 무조건 ignore배출조건(배출암됨)에 해당-->
+                                                        <td class="">
+                                                            <span class="badge badge-primary fs-10 fw-normal" style="cursor:pointer" onclick="js_openclose('N','640')" id="id_opencY_640">ON</span>
+                                                            <span class="badge badge-danger fs-10 fw-normal" style="cursor:pointer;display:none" onclick="js_openclose('Y','640')" id="id_opencN_640">OFF</span>
+                                                         </td>
+                                                        <td class=" text-danger">98%</td>
+                                                        <td class=" w-120">
+                                                            <div class="progress sm-progress-bar " style="width:120px;">
+                                                                <div class="progress-bar-animated bg-info progress-bar-striped" role="progressbar" style="width:98%" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                        </td>
+                                                        <!--<td class=" text-danger font-bold" >Done</td>-->
+                                                        <td class="">COMPLETE</td>
+                                                        <td class="">29</td>
+                                                        <td class="">210823-00011</td>
+                                                        <!--td class=""> 40.8</td>
+                                                        <td class=""> 0.1</td>
+                                                        <td class="">11 / 5 / <strong class="text-danger">16</strong></td-->
+                                                        <td class=""> true</td>
+                                                    </tr>
+                                                                                                                <tr>
+                                                        <td class=" text-danger">09</td>
+                                                        <!-- 소켓on인경우 ignore/normar에 따른 배출조건에 참여하고, off인경우 on되기전까지 무조건 ignore배출조건(배출암됨)에 해당-->
+                                                        <td class="">
+                                                            <span class="badge badge-primary fs-10 fw-normal" style="cursor:pointer" onclick="js_openclose('N','641')" id="id_opencY_641">ON</span>
+                                                            <span class="badge badge-danger fs-10 fw-normal" style="cursor:pointer;display:none" onclick="js_openclose('Y','641')" id="id_opencN_641">OFF</span>
+                                                         </td>
+                                                        <td class=" text-danger">100%</td>
+                                                        <td class=" w-120">
+                                                            <div class="progress sm-progress-bar " style="width:120px;">
+                                                                <div class="progress-bar-animated bg-info progress-bar-striped" role="progressbar" style="width:100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                        </td>
+                                                        <!--<td class=" text-danger font-bold" >Done</td>-->
+                                                        <td class="">COMPLETE</td>
+                                                        <td class="">27</td>
+                                                        <td class="">211108-00220</td>
+                                                        <!--td class=""> 40.8</td>
+                                                        <td class=""> 0.1</td>
+                                                        <td class="">65 / 1 / <strong class="text-danger">66</strong></td-->
+                                                        <td class=""> true</td>
+                                                    </tr>
+                                                                                                                <tr>
+                                                        <td class=" text-danger">10</td>
+                                                        <!-- 소켓on인경우 ignore/normar에 따른 배출조건에 참여하고, off인경우 on되기전까지 무조건 ignore배출조건(배출암됨)에 해당-->
+                                                        <td class="">
+                                                            <span class="badge badge-primary fs-10 fw-normal" style="cursor:pointer" onclick="js_openclose('N','642')" id="id_opencY_642">ON</span>
+                                                            <span class="badge badge-danger fs-10 fw-normal" style="cursor:pointer;display:none" onclick="js_openclose('Y','642')" id="id_opencN_642">OFF</span>
+                                                         </td>
+                                                        <td class=" text-danger">0%</td>
+                                                        <td class=" w-120">
+                                                            <div class="progress sm-progress-bar " style="width:120px;">
+                                                                <div class="progress-bar-animated bg-info progress-bar-striped" role="progressbar" style="width:0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                        </td>
+                                                        <!--<td class=" text-danger font-bold" >Done</td>-->
+                                                        <td class="">IDLE</td>
+                                                        <td class="">29</td>
+                                                        <td class=""></td>
+                                                        <!--td class=""> 0</td>
+                                                        <td class=""> 0</td>
+                                                        <td class="">0 / 0 / <strong class="text-danger">0</strong></td-->
+                                                        <td class=""> true</td>
+                                                    </tr>
+                                                                                                                <tr>
+                                                        <td class=" text-danger">11</td>
+                                                        <!-- 소켓on인경우 ignore/normar에 따른 배출조건에 참여하고, off인경우 on되기전까지 무조건 ignore배출조건(배출암됨)에 해당-->
+                                                        <td class="">
+                                                            <span class="badge badge-primary fs-10 fw-normal" style="cursor:pointer" onclick="js_openclose('N','643')" id="id_opencY_643">ON</span>
+                                                            <span class="badge badge-danger fs-10 fw-normal" style="cursor:pointer;display:none" onclick="js_openclose('Y','643')" id="id_opencN_643">OFF</span>
+                                                         </td>
+                                                        <td class=" text-danger">99%</td>
+                                                        <td class=" w-120">
+                                                            <div class="progress sm-progress-bar " style="width:120px;">
+                                                                <div class="progress-bar-animated bg-info progress-bar-striped" role="progressbar" style="width:99%" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                        </td>
+                                                        <!--<td class=" text-danger font-bold" >Done</td>-->
+                                                        <td class="">COMPLETE</td>
+                                                        <td class="">29</td>
+                                                        <td class="">210823-00180</td>
+                                                        <!--td class=""> 40.9</td>
+                                                        <td class=""> 0.2</td>
+                                                        <td class="">34 / 8 / <strong class="text-danger">42</strong></td-->
+                                                        <td class=""> true</td>
+                                                    </tr>
+                                                                                                                <tr>
+                                                        <td class=" text-danger">12</td>
+                                                        <!-- 소켓on인경우 ignore/normar에 따른 배출조건에 참여하고, off인경우 on되기전까지 무조건 ignore배출조건(배출암됨)에 해당-->
+                                                        <td class="">
+                                                            <span class="badge badge-primary fs-10 fw-normal" style="cursor:pointer" onclick="js_openclose('N','644')" id="id_opencY_644">ON</span>
+                                                            <span class="badge badge-danger fs-10 fw-normal" style="cursor:pointer;display:none" onclick="js_openclose('Y','644')" id="id_opencN_644">OFF</span>
+                                                         </td>
+                                                        <td class=" text-danger">0%</td>
+                                                        <td class=" w-120">
+                                                            <div class="progress sm-progress-bar " style="width:120px;">
+                                                                <div class="progress-bar-animated bg-info progress-bar-striped" role="progressbar" style="width:0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                        </td>
+                                                        <!--<td class=" text-danger font-bold" ></td>-->
+                                                        <td class="">IDLE</td>
+                                                        <td class="">25</td>
+                                                        <td class=""></td>
+                                                        <!--td class=""> 0</td>
+                                                        <td class=""> 0.3</td>
+                                                        <td class="">0 / 0 / <strong class="text-danger">0</strong></td-->
+                                                        <td class=""> true</td>
+                                                    </tr>
+                                                                                                                <tr>
+                                                        <td class=" text-danger">13</td>
+                                                        <!-- 소켓on인경우 ignore/normar에 따른 배출조건에 참여하고, off인경우 on되기전까지 무조건 ignore배출조건(배출암됨)에 해당-->
+                                                        <td class="">
+                                                            <span class="badge badge-primary fs-10 fw-normal" style="cursor:pointer" onclick="js_openclose('N','645')" id="id_opencY_645">ON</span>
+                                                            <span class="badge badge-danger fs-10 fw-normal" style="cursor:pointer;display:none" onclick="js_openclose('Y','645')" id="id_opencN_645">OFF</span>
+                                                         </td>
+                                                        <td class=" text-danger">0%</td>
+                                                        <td class=" w-120">
+                                                            <div class="progress sm-progress-bar " style="width:120px;">
+                                                                <div class="progress-bar-animated bg-info progress-bar-striped" role="progressbar" style="width:0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                        </td>
+                                                        <!--<td class=" text-danger font-bold" >Done</td>-->
+                                                        <td class="">IDLE</td>
+                                                        <td class="">26</td>
+                                                        <td class=""></td>
+                                                        <!--td class=""> 0</td>
+                                                        <td class=""> 0.2</td>
+                                                        <td class="">0 / 0 / <strong class="text-danger">0</strong></td-->
+                                                        <td class=""> true</td>
+                                                    </tr>
+                                                                                                                <tr>
+                                                        <td class=" text-danger">14</td>
+                                                        <!-- 소켓on인경우 ignore/normar에 따른 배출조건에 참여하고, off인경우 on되기전까지 무조건 ignore배출조건(배출암됨)에 해당-->
+                                                        <td class="">
+                                                            <span class="badge badge-primary fs-10 fw-normal" style="cursor:pointer" onclick="js_openclose('N','646')" id="id_opencY_646">ON</span>
+                                                            <span class="badge badge-danger fs-10 fw-normal" style="cursor:pointer;display:none" onclick="js_openclose('Y','646')" id="id_opencN_646">OFF</span>
+                                                         </td>
+                                                        <td class=" text-danger">100%</td>
+                                                        <td class=" w-120">
+                                                            <div class="progress sm-progress-bar " style="width:120px;">
+                                                                <div class="progress-bar-animated bg-info progress-bar-striped" role="progressbar" style="width:100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                        </td>
+                                                        <!--<td class=" text-danger font-bold" >Done</td>-->
+                                                        <td class="">COMPLETE</td>
+                                                        <td class="">28</td>
+                                                        <td class="">210823-00064</td>
+                                                        <!--td class=""> 40.8</td>
+                                                        <td class=""> 0.1</td>
+                                                        <td class="">23 / 3 / <strong class="text-danger">26</strong></td-->
+                                                        <td class=""> true</td>
+                                                    </tr>
+                                                                                                                <tr>
+                                                        <td class=" text-danger">15</td>
+                                                        <!-- 소켓on인경우 ignore/normar에 따른 배출조건에 참여하고, off인경우 on되기전까지 무조건 ignore배출조건(배출암됨)에 해당-->
+                                                        <td class="">
+                                                            <span class="badge badge-primary fs-10 fw-normal" style="cursor:pointer" onclick="js_openclose('N','647')" id="id_opencY_647">ON</span>
+                                                            <span class="badge badge-danger fs-10 fw-normal" style="cursor:pointer;display:none" onclick="js_openclose('Y','647')" id="id_opencN_647">OFF</span>
+                                                         </td>
+                                                        <td class=" text-danger">100%</td>
+                                                        <td class=" w-120">
+                                                            <div class="progress sm-progress-bar " style="width:120px;">
+                                                                <div class="progress-bar-animated bg-info progress-bar-striped" role="progressbar" style="width:100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div>
+                                                        </td>
+                                                        <!--<td class=" text-danger font-bold" >Done</td>-->
+                                                        <td class="">COMPLETE</td>
+                                                        <td class="">29</td>
+                                                        <td class="">211108-00146</td>
+                                                        <!--td class=""> 40.7</td>
+                                                        <td class=""> 0.2</td>
+                                                        <td class="">9 / 2 / <strong class="text-danger">11</strong></td-->
+                                                        <td class=""> true</td>
+                                                    </tr>
+                                                    
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div><!--// charger 충전상태 -->
+                                </div>
+                            </div>
+                        </div><!--// 스테이션 1개 -->
+
+                    </div>
+                </div><!-- row -->
+            
+            </div><!-- //Container-fluid Ends-->
+        </main>
+        <!-- MAIN -->
+
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12 footer-copyright text-center">
+                        <p class="text-end fs-12 font-999">Copyright 2023 ©OTOSONE. Made by Elaza</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </section>
+    <!-- NAVBAR -->
+    <!-- Modal #modalStationBtn01-->
+    <div class="modal fade" id="modalStationBtn01"  tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content" id="modalStationBtn01_layer">
+       
+            </div>
+        </div>
+    </div>
+  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js" integrity="sha512-24XP4a9KVoIinPFUbcnjIjAjtS59PUoxQj3GNVpWc86bCqPuy3YxAcxJrxFCxXe4GHtAumCbO2Ze2bddtuxaRw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="../js/script.js"></script>
+    <script>
+        const modalStationBtn01 = document.querySelector("#modalStationBtn01");
+        modalStationBtn01.addEventListener("show.bs.modal", e => {
+            const button = e.relatedTarget;
+            const seq = button.getAttribute('data-bs-seq');
+            const btype = button.getAttribute('data-bs-btype');
+            const bname = button.getAttribute('data-bs-bname');
+            $("#modalStationBtn01_layer").load(`../modal/loadModalStationBtn0${btype}.html?seq=${seq}`,function(){
+                $('#excel-cust-bolder').DataTable({
+                    "paging":   false,
+                    "ordering": false,
+                    "info":     false,
+                    "filter":     true,
+                    dom: 'Bfrtip',
+                    buttons:[
+                        {
+                            extend: 'excelHtml5',
+                            title: `${bname} ${seq}`
+                        }
+                     ]
+                });
+            });
+        });
+        modalStationBtn01.addEventListener('hidden.bs.modal', e => {
+            $('#modalStationBtn01_layer').empty();
+
+        });
+
+        function js_openclose(mot,seq){
+            hiddenfrm.location.replace('stationOpenClose.php?mot='+mot+'&seq='+seq);
+        }
+
+    </script>
+</body>
+</html>
